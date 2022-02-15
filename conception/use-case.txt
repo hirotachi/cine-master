@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor user
+rectangle cine-master{
+  user -- (fetch posts)
+  user -- (create/delete/update post)
+  user -- (create/delete/update comment)
+  user -- (login)
+  user -- (register)
+  (login) .> (wrong password): extends
+  (create/delete/update post) .> (authenticate): include
+  (create/delete/update comment) .> (login): include
+}
+@enduml

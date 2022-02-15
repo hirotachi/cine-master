@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="573px" preserveAspectRatio="none" style="width:427px;height:573px;background:#FFFFFF;" version="1.1" viewBox="0 0 427 573" width="427px" zoomAndPan="magnify"><defs/><g><!--MD5=[5567b5bd8cfae8a6de288fd955fec16b]
+cluster cine-master--><rect height="560" style="stroke:#181818;stroke-width:1.0;fill:none;" width="292" x="129" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="226.5" y="21.9951">cine-master</text><ellipse cx="274.9626" cy="471.1925" fill="#F1F1F1" rx="66.4626" ry="15.6925" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="230.4626" y="474.9401">fetch posts</text><ellipse cx="274.8359" cy="302.9672" fill="#F1F1F1" rx="112.8359" ry="24.9672" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="178.8359" y="305.8139">create/delete/update post</text><ellipse cx="275.2013" cy="391.9403" fill="#F1F1F1" rx="130.2013" ry="28.4403" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="160.7013" y="394.7869">create/delete/update comment</text><ellipse cx="274.7722" cy="144.0369" fill="#F1F1F1" rx="36.2722" ry="14.5369" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="256.1457" y="147.2741">login</text><ellipse cx="275.1007" cy="536.215" fill="#F1F1F1" rx="52.6007" ry="14.715" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="243.6007" y="539.9626">register</text><ellipse cx="275.0591" cy="60.1118" fill="#F1F1F1" rx="78.5591" ry="18.1118" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="215.3328" y="63.6525">wrong password</text><ellipse cx="275.0634" cy="209.9127" fill="#F1F1F1" rx="70.0634" ry="16.4127" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="225.5634" y="213.6602">authenticate</text><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><ellipse cx="21" cy="362.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M21,370.5 L21,397.5 M8,378.5 L34,378.5 M21,397.5 L8,412.5 M21,397.5 L34,412.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="6" y="426.9951">user</text><!--MD5=[829ffe38ea5e889535d3dd294f234cd6]
+link user to fetch posts--><path d="M36.0178,399.733 C54.8391,409.828 89.556,427.451 121,438 C153.074,448.761 190.138,456.86 219.752,462.341 " fill="none" id="user-fetch posts" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[fd471eb7faedd9fee04dea0a7fe2ac23]
+link user to create/delete/update post--><path d="M36.1529,365.04 C43.5227,353.649 53.6039,341.345 66,334 C94.6623,317.018 129.319,308.204 162.054,303.892 " fill="none" id="user-create/delete/update post" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[0a56fd1856b8cb1f60e3d0f2f6cb7cfc]
+link user to create/delete/update comment--><path d="M36.2706,392 C57.8754,392 101.0147,392 144.685,392 " fill="none" id="user-create/delete/update comment" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[723f75bbc208f5e0dee037db49810223]
+link user to login--><path d="M28.6065,353.916 C39.1791,304.952 64.7395,220.904 121,176 C154.512,149.253 204.938,143.332 238.635,142.719 " fill="none" id="user-login" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[9efbf0aa3685402ef2508fa27f18083c]
+link user to register--><path d="M36.2554,415.836 C53.1111,441.814 83.6492,482.534 121,504 C152.175,521.917 192.066,529.8595 223.299,533.3529 " fill="none" id="user-register" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[67bf26a12b8c0198e58d01757427a12c]
+link login to wrong password--><path d="M275,129.368 C275,116.725 275,98.222 275,83.505 " fill="none" id="login-to-wrong password" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="275,78.272,271,87.272,275,83.272,279,87.272,275,78.272" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="237.5" y="108.3169">extends</text><!--MD5=[32090d56f1fb07390be970eb85b6bab1]
+link create/delete/update post to authenticate--><path d="M275,277.587 C275,263.249 275,245.517 275,231.813 " fill="none" id="create/delete/update post-to-authenticate" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="275,226.586,271,235.586,275,231.586,279,235.586,275,226.586" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="241" y="256.8169">include</text><!--MD5=[72ff4f01e832c77041e10cf67d192ee7]
+link create/delete/update comment to login--><path d="M145.33,389.863 C126.299,383.791 108.824,373.947 96,358.5 C87.4217,348.167 45.1555,256.131 121,176 C149.716,145.661 199.103,140.155 234.203,140.636 " fill="none" id="create/delete/update comment-to-login" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="239.274,140.748,230.3642,136.551,234.2752,140.638,230.1882,144.549,239.274,140.748" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="67" y="354.5669">include</text><!--MD5=[7892ef2031a409f89a8ccacfd046b44a]
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor user
+rectangle cine-master{
+  user - - (fetch posts)
+  user - - (create/delete/update post)
+  user - - (create/delete/update comment)
+  user - - (login)
+  user - - (register)
+  (login) .> (wrong password): extends
+  (create/delete/update post) .> (authenticate): include
+  (create/delete/update comment) .> (login): include
+}
+@enduml
+
+PlantUML version 1.2022.2beta5(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
