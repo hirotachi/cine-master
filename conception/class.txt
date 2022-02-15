@@ -37,6 +37,7 @@ class Post {
     +String title
     +String poster
     +String trailer
+    +String banner
     +String description
     +Date release_date
     +Int period
