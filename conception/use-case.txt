@@ -6,10 +6,9 @@ rectangle cine-master{
   user -- (fetch posts)
   user -- (create/delete/update post)
   user -- (create/delete/update comment)
-  user -- (login)
+  user -- (authenticate)
   user -- (register)
-  (login) .> (wrong password): extends
   (create/delete/update post) .> (authenticate): include
-  (create/delete/update comment) .> (login): include
+  (create/delete/update comment) .> (authenticate): include
 }
 @enduml

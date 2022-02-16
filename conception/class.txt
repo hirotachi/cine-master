@@ -4,7 +4,6 @@ Base <|-- Post
 Base <|-- Comment
 Base: +Int id
 Base: +Date created_at
-Base: -Int authorID
 Base: +add()
 Base: +getAuthor()
 Base: +delete()
@@ -13,6 +12,7 @@ Base: +update(String id, updates)
 User "1..1" --> "0..*" Post
 User "1..1" --> "0..*" Comment
 Post "1..1" --> "0..*" Comment
+Category "0..*" --> "0..*" Post
 Comment "1" --> "1..1" Post
 
 class User{
@@ -29,8 +29,14 @@ class User{
 
 class Comment {
     +String content
-    +Int postId
     +getPost()
+}
+
+class Category {
+    +String id
+    +String name
+    +getMovies()
+    +getSeries()
 }
 
 class Post {
@@ -42,6 +48,7 @@ class Post {
     +Date release_date
     +Int period
     +[Comment] getComments()
+    +[Category] getCategories()
 }
 
        

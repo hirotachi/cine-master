@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="573px" preserveAspectRatio="none" style="width:427px;height:573px;background:#FFFFFF;" version="1.1" viewBox="0 0 427 573" width="427px" zoomAndPan="magnify"><defs/><g><!--MD5=[5567b5bd8cfae8a6de288fd955fec16b]
-cluster cine-master--><rect height="560" style="stroke:#181818;stroke-width:1.0;fill:none;" width="292" x="129" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="226.5" y="21.9951">cine-master</text><ellipse cx="274.9626" cy="471.1925" fill="#F1F1F1" rx="66.4626" ry="15.6925" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="230.4626" y="474.9401">fetch posts</text><ellipse cx="274.8359" cy="302.9672" fill="#F1F1F1" rx="112.8359" ry="24.9672" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="178.8359" y="305.8139">create/delete/update post</text><ellipse cx="275.2013" cy="391.9403" fill="#F1F1F1" rx="130.2013" ry="28.4403" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="160.7013" y="394.7869">create/delete/update comment</text><ellipse cx="274.7722" cy="144.0369" fill="#F1F1F1" rx="36.2722" ry="14.5369" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="256.1457" y="147.2741">login</text><ellipse cx="275.1007" cy="536.215" fill="#F1F1F1" rx="52.6007" ry="14.715" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="243.6007" y="539.9626">register</text><ellipse cx="275.0591" cy="60.1118" fill="#F1F1F1" rx="78.5591" ry="18.1118" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="215.3328" y="63.6525">wrong password</text><ellipse cx="275.0634" cy="209.9127" fill="#F1F1F1" rx="70.0634" ry="16.4127" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="225.5634" y="213.6602">authenticate</text><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
-entity user--><ellipse cx="21" cy="362.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M21,370.5 L21,397.5 M8,378.5 L34,378.5 M21,397.5 L8,412.5 M21,397.5 L34,412.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="6" y="426.9951">user</text><!--MD5=[829ffe38ea5e889535d3dd294f234cd6]
-link user to fetch posts--><path d="M36.0178,399.733 C54.8391,409.828 89.556,427.451 121,438 C153.074,448.761 190.138,456.86 219.752,462.341 " fill="none" id="user-fetch posts" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[fd471eb7faedd9fee04dea0a7fe2ac23]
-link user to create/delete/update post--><path d="M36.1529,365.04 C43.5227,353.649 53.6039,341.345 66,334 C94.6623,317.018 129.319,308.204 162.054,303.892 " fill="none" id="user-create/delete/update post" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[0a56fd1856b8cb1f60e3d0f2f6cb7cfc]
-link user to create/delete/update comment--><path d="M36.2706,392 C57.8754,392 101.0147,392 144.685,392 " fill="none" id="user-create/delete/update comment" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[723f75bbc208f5e0dee037db49810223]
-link user to login--><path d="M28.6065,353.916 C39.1791,304.952 64.7395,220.904 121,176 C154.512,149.253 204.938,143.332 238.635,142.719 " fill="none" id="user-login" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[9efbf0aa3685402ef2508fa27f18083c]
-link user to register--><path d="M36.2554,415.836 C53.1111,441.814 83.6492,482.534 121,504 C152.175,521.917 192.066,529.8595 223.299,533.3529 " fill="none" id="user-register" style="stroke:#181818;stroke-width:1.0;"/><!--MD5=[67bf26a12b8c0198e58d01757427a12c]
-link login to wrong password--><path d="M275,129.368 C275,116.725 275,98.222 275,83.505 " fill="none" id="login-to-wrong password" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="275,78.272,271,87.272,275,83.272,279,87.272,275,78.272" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="237.5" y="108.3169">extends</text><!--MD5=[32090d56f1fb07390be970eb85b6bab1]
-link create/delete/update post to authenticate--><path d="M275,277.587 C275,263.249 275,245.517 275,231.813 " fill="none" id="create/delete/update post-to-authenticate" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="275,226.586,271,235.586,275,231.586,279,235.586,275,226.586" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="241" y="256.8169">include</text><!--MD5=[72ff4f01e832c77041e10cf67d192ee7]
-link create/delete/update comment to login--><path d="M145.33,389.863 C126.299,383.791 108.824,373.947 96,358.5 C87.4217,348.167 45.1555,256.131 121,176 C149.716,145.661 199.103,140.155 234.203,140.636 " fill="none" id="create/delete/update comment-to-login" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="239.274,140.748,230.3642,136.551,234.2752,140.638,230.1882,144.549,239.274,140.748" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="67" y="354.5669">include</text><!--MD5=[7892ef2031a409f89a8ccacfd046b44a]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="514.5833px" preserveAspectRatio="none" style="width:386px;height:514px;background:#00000000;" version="1.1" viewBox="0 0 386 514" width="386.4583px" zoomAndPan="magnify"><defs><linearGradient id="g11o9nrj31afz50" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#F18E3E"/><stop offset="100%" stop-color="#EC7211"/></linearGradient></defs><g><!--MD5=[5567b5bd8cfae8a6de288fd955fec16b]
+cluster cine-master--><g id="cluster_cine-master"><rect height="501.0417" rx="4.1667" ry="4.1667" style="stroke:#4E5D6C;stroke-width:2.0833333333333335;fill:none;" width="291.6667" x="88.5417" y="7.2917"/><text fill="#EC7211" font-family="&quot;Verdana&quot;" font-size="20.8333" font-weight="bold" lengthAdjust="spacing" textLength="144.7917" x="161.9792" y="33.9213">cine-master</text></g><g id="elem_fetch posts"><ellipse cx="234.5204" cy="392.6547" fill="url(#g11o9nrj31afz50)" rx="69.4163" ry="20.7797" style="stroke:#EC7211;stroke-width:2.0833333333333335;"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="70.8333" x="199.1038" y="394.8987">fetch posts</text></g><g id="elem_create/delete/update post"><ellipse cx="234.4164" cy="87.7166" fill="url(#g11o9nrj31afz50)" rx="116.1873" ry="25.7375" style="stroke:#EC7211;stroke-width:2.0833333333333335;"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="165.625" x="151.6039" y="89.9607">create/delete/update post</text></g><g id="elem_create/delete/update comment"><ellipse cx="234.2658" cy="307.4782" fill="url(#g11o9nrj31afz50)" rx="129.0574" ry="28.3115" style="stroke:#EC7211;stroke-width:2.0833333333333335;"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="195.8333" x="136.3491" y="309.7222">create/delete/update comment</text></g><g id="elem_authenticate"><ellipse cx="234.5574" cy="195.7797" fill="url(#g11o9nrj31afz50)" rx="73.0991" ry="20.7797" style="stroke:#EC7211;stroke-width:2.0833333333333335;"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="76.0417" x="196.5366" y="198.0237">authenticate</text></g><g id="elem_register"><ellipse cx="234.3724" cy="470.7797" fill="url(#g11o9nrj31afz50)" rx="54.6849" ry="20.7797" style="stroke:#EC7211;stroke-width:2.0833333333333335;"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="209.3724" y="473.0237">register</text></g><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><g id="elem_user"><ellipse cx="20.3125" cy="272.3958" fill="url(#g11o9nrj31afz50)" rx="8.3333" ry="8.3333" style="stroke:#EC7211;stroke-width:0.5208333333333334;"/><path d="M20.3125,280.7292 L20.3125,308.8542 M6.7708,289.0625 L33.8542,289.0625 M20.3125,308.8542 L6.7708,324.4792 M20.3125,308.8542 L33.8542,324.4792 " fill="none" style="stroke:#EC7211;stroke-width:0.5208333333333334;"/><text fill="#4E5D6C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="28.125" x="6.25" y="342.8528">user</text></g><!--MD5=[829ffe38ea5e889535d3dd294f234cd6]
+link user to fetch posts--><g id="link_user_fetch posts"><path d="M39.8001,325.3979 C50.7396,335.2146 65.3402,346.8083 80.2083,354.1667 C108.8313,368.3323 143.1146,377.5875 171.9781,383.4667 " fill="none" id="user-fetch posts" style="stroke:#EC7211;stroke-width:3.125;"/></g><!--MD5=[fd471eb7faedd9fee04dea0a7fe2ac23]
+link user to create/delete/update post--><g id="link_user_create/delete/update post"><path d="M29.0944,263.4073 C36.9433,230.3521 52.0902,185.824 80.2083,156.25 C101.6932,133.6531 131.9688,117.9354 159.9333,107.2938 " fill="none" id="user-create/delete/update post" style="stroke:#EC7211;stroke-width:3.125;"/></g><!--MD5=[0a56fd1856b8cb1f60e3d0f2f6cb7cfc]
+link user to create/delete/update comment--><g id="link_user_create/delete/update comment"><path d="M39.7951,307.2917 C55.4081,307.2917 79.3053,307.2917 105.04,307.2917 " fill="none" id="user-create/delete/update comment" style="stroke:#EC7211;stroke-width:3.125;"/></g><!--MD5=[48f07c31720dba9e8c5d2417bcd27613]
+link user to authenticate--><g id="link_user_authenticate"><path d="M39.999,290.2573 C51.1183,280.6719 65.8319,268.9531 80.2083,260.4167 C114.1948,240.2354 155.6594,223.1583 186.8635,211.6427 " fill="none" id="user-authenticate" style="stroke:#EC7211;stroke-width:3.125;"/></g><!--MD5=[9efbf0aa3685402ef2508fa27f18083c]
+link user to register--><g id="link_user_register"><path d="M31.709,351.1802 C40.3182,378.326 55.2992,411.7885 80.2083,432.2917 C108.0417,455.2008 147.6833,464.744 179.6594,468.6078 " fill="none" id="user-register" style="stroke:#EC7211;stroke-width:3.125;"/></g><!--MD5=[32090d56f1fb07390be970eb85b6bab1]
+link create/delete/update post to authenticate--><g id="link_create/delete/update post_authenticate"><path d="M234.375,113.2938 C234.375,130.2229 234.375,152.3031 234.375,169.3656 " fill="none" id="create/delete/update post-to-authenticate" style="stroke:#EC7211;stroke-width:3.125;stroke-dasharray:7.0,7.0;"/><polygon fill="#EC7211" points="234.375,174.9458,238.5417,165.5708,234.375,169.7375,230.2083,165.5708,234.375,174.9458" style="stroke:#EC7211;stroke-width:3.125;"/><text fill="#4E5D6C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="44.7917" x="195.8333" y="148.8424">include</text></g><!--MD5=[3e62b51068368daec91a3a223c5161d4]
+link create/delete/update comment to authenticate--><g id="link_create/delete/update comment_authenticate"><path d="M234.375,279.1656 C234.375,261.7844 234.375,239.6094 234.375,222.5042 " fill="none" id="create/delete/update comment-to-authenticate" style="stroke:#EC7211;stroke-width:3.125;stroke-dasharray:7.0,7.0;"/><polygon fill="#EC7211" points="234.375,216.9125,230.2083,226.2875,234.375,222.1208,238.5417,226.2875,234.375,216.9125" style="stroke:#EC7211;stroke-width:3.125;"/><text fill="#4E5D6C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="44.7917" x="195.8333" y="252.7486">include</text></g><!--MD5=[e817b738a510ad771d4f307ede496a0d]
 @startuml
+!theme aws-orange
 left to right direction
 skinparam packageStyle rectangle
 actor user
@@ -17,11 +17,445 @@ rectangle cine-master{
   user - - (fetch posts)
   user - - (create/delete/update post)
   user - - (create/delete/update comment)
-  user - - (login)
+  user - - (authenticate)
   user - - (register)
-  (login) .> (wrong password): extends
   (create/delete/update post) .> (authenticate): include
-  (create/delete/update comment) .> (login): include
+  (create/delete/update comment) .> (authenticate): include
+}
+@enduml
+
+@startuml
+skinparam BackgroundColor transparent
+skinparam useBetaStyle false
+    !assume transparent light
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             false
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               5
+skinparam ArrowColor            #4E5D6C
+skinparam stereotype {
+    CBackgroundColor ffffff
+    CBorderColor #BEBEBE
+    ABackgroundColor #239B02
+    ABorderColor #176702
+    IBackgroundColor #EC4624
+    IBorderColor #A7280E
+    EBackgroundColor #F18E3E
+    EBorderColor #BD5B0E
+    NBackgroundColor #008AE0
+    NBorderColor #005C96
+}
+skinparam title {
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  ffffff-#eeeeee
+	FontColor #EC7211
+	BorderColor #eeeeee
+}
+
+skinparam legend {
+    		FontColor #4E5D6C
+		BorderColor #BEBEBE
+		BackgroundColor ffffff-#eeeeee
+    BackgroundColor transparent
+}
+
+skinparam swimlane {
+	BorderColor #0073bb
+	BorderThickness 2
+	TitleBackgroundColor  ffffff-#eeeeee
+	TitleFontColor #EC7211
+}
+
+
+skinparam activity {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	BarColor #1D8102
+	StartColor #0073bb
+	EndColor #0073bb
+	DiamondBackgroundColor #eeeeee
+  	DiamondBorderColor #BEBEBE
+  	DiamondFontColor #4E5D6C
+}
+
+skinparam participant {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	ParticipantBorderThickness 2
+}
+
+skinparam actor {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #4E5D6C
+}
+
+skinparam arrow {
+	Thickness 3
+	Color #EC7211
+	FontColor #4E5D6C
+}
+
+skinparam sequence {
+	ArrowThickness 3
+	BorderColor #EC7211
+	TitleFontColor #EC7211
+	BackgroundColor transparent
+	StartColor #EC7211
+	EndColor #EC7211
+	BoxBackgroundColor transparent
+	BoxBorderColor #4E5D6C
+	BoxFontColor #4E5D6C
+	DelayFontColor #4E5D6C
+	LifeLineBorderColor #abb6c2
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor #8191A3
+	GroupBorderColor #4E5D6C
+	GroupFontColor #4E5D6C
+	GroupHeaderFontColor #0073bb
+	GroupBackgroundColor #eeeeee
+	GroupBodyBackgroundColor transparent
+	GroupHeaderBackgroundColor transparent
+	DividerBackgroundColor #4E5D6C
+    DividerBorderColor #4E5D6C
+    DividerBorderThickness 2
+    DividerFontColor #abb6c2
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #4E5D6C
+	ReferenceFontColor #4E5D6C
+	ReferenceHeaderFontColor #0073bb
+	ReferenceHeaderBackgroundColor #eeeeee
+	StereotypeFontColor #FFF
+	StereotypeFontSize 12
+}
+
+skinparam partition {
+	BorderColor #EC7211
+	FontColor #EC7211
+	BackgroundColor transparent
+}
+
+skinparam collections {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+}
+
+skinparam control {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #4E5D6C
+}
+
+skinparam entity {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #4E5D6C
+}
+
+skinparam boundary {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #4E5D6C
+}
+
+skinparam agent {
+	BackgroundColor #EC7211
+	BorderColor #F18E3E
+	FontColor #4E5D6C
+}
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor #0073bb
+	BorderColor #005C96
+	FontColor #FFF
+}
+
+skinparam artifact {
+	BackgroundColor #4E5D6C
+	BorderColor #3E4A56
+	FontColor #abb6c2
+}
+
+skinparam component {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+}
+
+skinparam interface {
+	BackgroundColor  #A7280E
+	BorderColor  #d13212
+	FontColor #4E5D6C
+}
+
+skinparam storage {
+	BackgroundColor #EC7211
+  	BorderColor #BD5B0E
+	FontColor #FFF
+}
+
+skinparam node {
+	BackgroundColor  transparent
+	BorderColor #abb6c2
+	FontColor #abb6c2
+}
+
+skinparam cloud {
+	BackgroundColor transparent
+	BorderColor #4E5D6C
+	FontColor #4E5D6C
+}
+
+skinparam database {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #4E5D6C
+	StereotypeFontColor #4E5D6C
+}
+
+skinparam class {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	FontColor #FFF
+	HeaderBackgroundColor #F18E3E-#EC7211
+	StereotypeFontColor #4E5D6C
+	BorderThickness 1
+	AttributeFontColor #FFF
+	AttributeFontSize 11
+}
+
+skinparam object {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	StereotypeFontColor #4E5D6C
+	BorderThickness 1
+	AttributeFontColor #FFF
+	AttributeFontSize 11
+}
+
+skinparam usecase {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	BorderThickness 2
+	StereotypeFontColor #EC7211
+}
+
+skinparam rectangle {
+	BackgroundColor transparent
+	FontColor #4E5D6C
+	BorderColor #4E5D6C
+	BorderThickness 2
+	StereotypeFontColor #EC7211
+}
+
+skinparam package {
+	BackgroundColor transparent
+  	BorderColor #4E5D6C
+	FontColor #4E5D6C
+	BorderThickness 2
+}
+
+skinparam folder {
+	BackgroundColor #eeeeee
+  	BorderColor #EC7211
+	FontColor #EC7211
+	BorderThickness 2
+}
+
+skinparam frame {
+	BackgroundColor #eeeeee
+  	BorderColor #0073bb
+	FontColor #0073bb
+	BorderThickness 2
+}
+
+skinparam state {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	StartColor #0073bb
+	EndColor #0073bb
+	AttributeFontColor #4E5D6C
+	AttributeFontSize 11
+}
+
+skinparam queue {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+}
+
+skinparam card {
+	BackgroundColor #0073bb
+	BorderColor #005C96
+	FontColor #FFF
+}
+
+skinparam file {
+	BackgroundColor #eeeeee
+	BorderColor #abb6c2
+	FontColor #4E5D6C
+}
+
+skinparam stack {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+}
+
+
+skinparam map {
+			FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+}
+
+<style>
+wbsDiagram, mindmapDiagram {
+  root {
+    BackgroundColor transparent
+    FontColor #FFF
+    HyperLinkColor #0073bb
+    LineColor #BD5B0E
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+    		FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+    Padding 15
+    RoundCorner 20
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #eeeeee
+    FontColor #0073bb
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #4E5D6C
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #4E5D6C
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  ffffff-#eeeeee
+	FontColor #FFF
+	BorderColor #eeeeee
+  }
+}
+nwdiagDiagram {
+  network {
+    		FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211    
+    LineColor $PRIMARY_BG
+    LineThickness 1.0
+    FontColor #BD5B0E
+  }
+  server {
+    		FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+  }
+  arrow {
+    FontColor #BD5B0E
+    LineColor #BD5B0E
+  }
+  group {
+    BackGroundColor $LIGHT_BG
+    LineColor #8191A3
+    LineThickness 2.0
+    Margin 5
+    Padding 5
+  }
+}
+ganttDiagram {
+  task {
+    		FontColor #FFF
+		BorderColor #EC7211
+		BackgroundColor #F18E3E-#EC7211
+	LineColor $PRIMARY_BG
+    Margin 10
+    Padding 6
+  }
+  note {
+	FontColor #FFF
+	LineColor #005C96
+    BackGroundColor #0073bb
+  }
+  separator {
+	LineColor #eeeeee
+    BackGroundColor 		FontColor #4E5D6C
+		BorderColor #BEBEBE
+		BackgroundColor ffffff-#eeeeee
+    FontColor #4E5D6C
+  }
+  milestone {
+	FontColor #0073bb
+	FontSize 16
+	FontStyle italic
+	BackGroundColor $DIAMOND_BG
+	LineColor #BEBEBE
+  }
+  timeline {
+    BackgroundColor #eeeeee
+    FontColor #4E5D6C
+  }
+  closed {
+	BackgroundColor #BD5B0E
+	FontColor #FFF
+  }
+}
+</style>
+
+left to right direction
+skinparam packageStyle rectangle
+actor user
+rectangle cine-master{
+  user - - (fetch posts)
+  user - - (create/delete/update post)
+  user - - (create/delete/update comment)
+  user - - (authenticate)
+  user - - (register)
+  (create/delete/update post) .> (authenticate): include
+  (create/delete/update comment) .> (authenticate): include
 }
 @enduml
 
