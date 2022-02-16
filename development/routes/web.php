@@ -14,6 +14,6 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['working' => "nice"]);
 });
 
