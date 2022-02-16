@@ -19,7 +19,7 @@ services:
         links:
             - mysql
         environment:
-            PMA_HOST: '${DB_HOST}'
+            PMA_HOST: '${DB_PHPMYADMIN_HOST}'
             PMA_PORT: 3306
             PMA_ARBITRARY: 1
         restart: always

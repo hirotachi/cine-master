@@ -35,8 +35,7 @@ class Comment {
 class Category {
     +String id
     +String name
-    +getMovies()
-    +getSeries()
+    +getPosts()
 }
 
 class Post {
@@ -50,5 +49,3 @@ class Post {
     +[Comment] getComments()
     +[Category] getCategories()
 }
-
-       
