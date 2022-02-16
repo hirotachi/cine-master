@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-dude
+dude {{$working}}
 </body>
 </html>
