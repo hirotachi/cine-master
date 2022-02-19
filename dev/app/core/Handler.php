@@ -10,6 +10,7 @@ class Handler
     private $resolver = null;
     public string $uri;
     public string $regexURI;
+    public bool $isDynamic = false;
 
     public function __construct($resolver, string $uri)
     {
@@ -60,9 +61,7 @@ class Handler
             $paramName = substr($match[0], 1);
             return "(?P<$paramName>\w+)";
         }, $uri);
-        if ($pattern === $uri) {
-            return $uri;
-        }
+        $this->isDynamic = $pattern !== $uri;
         return str_replace("/", "\/", $pattern);
     }
 

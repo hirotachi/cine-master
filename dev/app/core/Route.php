@@ -39,7 +39,10 @@ class Route
         $handler = new Handler($method, $uri);
 
         self::$routesMap[strtolower($methodName)][$handler->regexURI] = &$handler;
-        self::$routesMap[strtolower($methodName)][$handler->uri] = &$handler;
+        if (!$handler->isDynamic) {
+            self::$routesMap[strtolower($methodName)][$handler->uri] = &$handler;
+        }
+
 
         return $handler;
     }
@@ -72,10 +75,12 @@ class Route
         if ($methodRoutesMap) {
             $path = $request->getPathInfo();
             $handler = $methodRoutesMap[$path] ?? null;
-
             if (!$handler) {
                 foreach ($methodRoutesMap as $regexURI => $value) {
-                    preg_match("/$regexURI$/", $path, $matches);
+                    if (!$value->isDynamic) {
+                        continue;
+                    }
+                    preg_match("/^$regexURI$/", $path, $matches);
                     if (count($matches) !== 0) {
                         $request->attributes->add(array_slice($matches, 1));
                         $handler = $value;
