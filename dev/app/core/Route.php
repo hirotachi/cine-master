@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class Route
 {
+    static private $currentGroup = null;
     static public array $routesMap = array();
     static public array $routesWithByName = array();
 
@@ -36,7 +37,7 @@ class Route
         list($uri, $method) = $arguments;
 
 
-        $handler = new Handler($method, $uri);
+        $handler = new Handler($method, (self::$currentGroup ?? "").$uri);
 
         self::$routesMap[strtolower($methodName)][$handler->regexURI] = &$handler;
         if (!$handler->isDynamic) {
@@ -91,4 +92,15 @@ class Route
         };
         return $handler;
     }
+
+
+    static public function group($groupPath, $setupRouteStacks)
+    {
+//        stacking groups on each other
+        $older = self::$currentGroup ?? "";
+        self::$currentGroup = $older.$groupPath;
+        $setupRouteStacks();
+        self::$currentGroup = $older;
+    }
+
 }

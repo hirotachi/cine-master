@@ -16,7 +16,9 @@ use App\Models\User;
 |
 */
 
+Route::domain("nice")->group(function () {
 
+});
 Route::get('/', function () {
     return view('home', ['working' => "nice"]);
 })->name("home");
