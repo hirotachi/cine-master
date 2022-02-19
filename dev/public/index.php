@@ -15,7 +15,7 @@ $kernel = new Kernel();
 
 $response = $kernel->handle(Request::capture());
 
-//$response->send();
+$response->send();
 
 
 
