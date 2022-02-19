@@ -15,6 +15,7 @@ Route::get("/", function () {
 
 Route::get("/test", [TesterController::class, "test"]);
 
+
 Route::group("/api", function () {
     Route::get("/nicer", [TesterController::class, "test"]);
     Route::group("/v2", function () {

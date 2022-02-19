@@ -1,7 +1,8 @@
 <?php
 
 
-function autoload($name){
+function autoload($name)
+{
     require_once "$name.php";
 }
 
