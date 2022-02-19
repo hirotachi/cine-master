@@ -1,8 +1,8 @@
 <?php
 
 
+use App\Core\Request;
 use App\Kernel;
-use App\Request;
 
 
 require __DIR__.'/../vendor/autoload.php';

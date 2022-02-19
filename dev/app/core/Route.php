@@ -1,17 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Core;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
 /**
- * @method static \App\Handler get(string $uri, array|string|callable|null $action = null)
- * @method static \App\Handler post(string $uri, array|string|callable|null $action = null)
- * @method static \App\Handler patch(string $uri, array|string|callable|null $action = null)
- * @method static \App\Handler put(string $uri, array|string|callable|null $action = null)
- * @method static \App\Handler delete(string $uri, array|string|callable|null $action = null)
+ * @method static \App\Core\Handler get(string $uri, array|string|callable|null $action = null)
+ * @method static \App\Core\Handler post(string $uri, array|string|callable|null $action = null)
+ * @method static \App\Core\Handler patch(string $uri, array|string|callable|null $action = null)
+ * @method static \App\Core\Handler put(string $uri, array|string|callable|null $action = null)
+ * @method static \App\Core\Handler delete(string $uri, array|string|callable|null $action = null)
  */
 class Route
 {
@@ -39,7 +39,7 @@ class Route
         $handler = new Handler($method, $uri);
 
         self::$routesMap[strtolower($methodName)][$handler->regexURI] = &$handler;
-//        self::$routesMap[strtolower($methodName)][$handler->uri] = &$handler;
+        self::$routesMap[strtolower($methodName)][$handler->uri] = &$handler;
 
         return $handler;
     }
