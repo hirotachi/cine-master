@@ -1,3 +1,2 @@
-body{
-    background: lighten(black, 10%);
-}
+@use "abstracts";
+@use "base";

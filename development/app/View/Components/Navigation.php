@@ -23,6 +23,6 @@ class Navigation extends Component
      */
     public function render()
     {
-        return view('components.nav');
+        return view('components.navigation');
     }
 }
