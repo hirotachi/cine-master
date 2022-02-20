@@ -2,12 +2,35 @@
 
 
 use App\Core\RedirectResponse;
-use duncan3dc\Laravel\BladeInstance;
+use Jenssegers\Blade\Blade;
 use Symfony\Component\HttpFoundation\Response;
 
-function view($path, $data): string
+function view($path, $data = []): string
 {
-    $blade = new BladeInstance(__DIR__."/../resources/views", __DIR__."/../cache/views");
+    $views = __DIR__."/../resources/views";
+    $cache = __DIR__."/../cache/views";
+
+    $blade = new Blade($views, $cache);
+
+
+    $blade->directive("styles", function ($file = "default") {
+        return "<?php \$__env->startPush('styles'); ?>
+        <link rel='stylesheet' href='./css/<?=$file;?>.css'>
+        <?php \$__env->stopPush(); ?>
+    ";
+    });
+
+    $blade->directive("scripts", function ($file = "default") {
+        return "<?php \$__env->startPush('scripts'); ?>
+        <script  href='./js/<?=$file;?>.js'>
+        <?php \$__env->stopPush(); ?>
+    ";
+    });
+
+
+    if (!$blade->exists($path)) {
+        return "not found";
+    }
     return $blade->render($path, $data);
 }
 

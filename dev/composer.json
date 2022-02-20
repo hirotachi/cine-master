@@ -1,6 +1,6 @@
 {
-    "require": {
-        "symfony/http-foundation": "^6.0",
-        "duncan3dc/blade": "^4.11"
-    }
+  "require": {
+    "symfony/http-foundation": "^6.0",
+    "jenssegers/blade": "^1.4"
+  }
 }
