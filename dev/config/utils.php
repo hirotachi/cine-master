@@ -3,6 +3,7 @@
 
 use App\Core\RedirectResponse;
 use duncan3dc\Laravel\BladeInstance;
+use Symfony\Component\HttpFoundation\Response;
 
 function view($path, $data): string
 {
@@ -14,5 +15,10 @@ function view($path, $data): string
 function redirect(string $path = "")
 {
     return new RedirectResponse($path);
+}
+
+function response(?string $content = "", int $status = Response::HTTP_OK, array $headers = []): Response
+{
+    return new Response($content, $status, $headers);
 }
 

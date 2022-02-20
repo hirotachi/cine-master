@@ -2,7 +2,6 @@
 
 namespace App\Core;
 
-use Symfony\Component\HttpFoundation\RedirectResponse as RedirectResponseAlias;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -70,14 +69,14 @@ class Route
     static private function resolve(Handler $handler): Response
     {
         $response = $handler->resolve(self::$request);
-        if ($response instanceof RedirectResponseAlias) {
+        if ($response instanceof Response) {
             return $response;
         }
         $contentType = gettype($response);
         if ($contentType !== "string") {
             $response = json_encode($response);
         }
-        return new Response($response, Response::HTTP_OK);
+        return new Response($response);
     }
 
     static private function getHandler(Request $request): Handler|null

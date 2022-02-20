@@ -12,7 +12,7 @@ Route::get("/{user}/{nice}", function (Request $req) {
 
 
 Route::get("/", function () {
-    return redirect()->route("nice", ["nice" => "nice"]);
+    return [1, 2, 3];
 })->name("home");
 
 Route::get("/test", [TesterController::class, "test"])->name("test");
