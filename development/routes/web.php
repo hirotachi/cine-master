@@ -16,14 +16,11 @@ use App\Models\User;
 |
 */
 
-Route::domain("nice")->group(function () {
-
-});
+redirect()->route("profile");
 Route::get('/', function () {
     return view('home', ['working' => "nice"]);
 })->name("home");
 
-Route::get();
 
 Route::resource("posts", PostController::class)->middleware("auth");
 

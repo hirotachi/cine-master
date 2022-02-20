@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use Symfony\Component\HttpFoundation\RedirectResponse as RedirectResponseAlias;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,9 +16,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class Route
 {
+    static private Request $request;
     static private $currentGroup = null;
-    static public array $routesMap = array();
-    static public array $routesWithByName = array();
+    static private array $routesMap = array();
+    static private array $routesByName = array();
 
     /**
      * @param  string  $methodName
@@ -51,22 +53,31 @@ class Route
 
     /**
      * @param  Request  $request
-     * @return Response
+     * @return Response|null
      */
-    public static function handle(Request $request): Response
+    public static function handle(Request $request): ?Response
     {
+        self::$request = &$request;
         $handler = self::getHandler($request);
         if (!$handler) {
             return new Response(json_encode(["message" => "not found"]), Response::HTTP_OK,
                 ["content-type" => "application/json"]);
         }
-        $content = $handler->resolve($request);
+        return self::resolve($handler);
 
-        $contentType = gettype($content);
-        if ($contentType !== "string") {
-            $content = json_encode($content);
+    }
+
+    static private function resolve(Handler $handler): Response
+    {
+        $response = $handler->resolve(self::$request);
+        if ($response instanceof RedirectResponseAlias) {
+            return $response;
         }
-        return new Response($content, Response::HTTP_OK);
+        $contentType = gettype($response);
+        if ($contentType !== "string") {
+            $response = json_encode($response);
+        }
+        return new Response($response, Response::HTTP_OK);
     }
 
     static private function getHandler(Request $request): Handler|null
@@ -101,6 +112,17 @@ class Route
         self::$currentGroup = $older.$groupPath;
         $setupRouteStacks();
         self::$currentGroup = $older;
+    }
+
+    public static function setRouteByName(string $routeName, Handler $handler)
+    {
+        self::$routesByName[$routeName] = $handler;
+    }
+
+
+    public static function getRouteByName(string $name): ?Handler
+    {
+        return self::$routesByName[$name] ?? null;
     }
 
 }

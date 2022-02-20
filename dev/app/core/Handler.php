@@ -57,8 +57,8 @@ class Handler
 
     private function regexifyURI(string $uri): string
     {
-        $pattern = preg_replace_callback("/:\w+/", function ($match) {
-            $paramName = substr($match[0], 1);
+        $pattern = preg_replace_callback("/\{(\w+)\}/", function ($match) {
+            $paramName = $match[1];
             return "(?P<$paramName>\w+)";
         }, $uri);
         $this->isDynamic = $pattern !== $uri;
@@ -72,5 +72,10 @@ class Handler
             return $obj->$method($request);
         }
         return call_user_func_array($this->resolver, [$request]);
+    }
+
+    public function name($handlerName)
+    {
+        Route::setRouteByName($handlerName, $this);
     }
 }

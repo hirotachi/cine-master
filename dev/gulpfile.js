@@ -59,7 +59,7 @@ function watchSass() {
 }
 
 function watchCSS() {
-    gulp.watch("./public/css/**/*.css", gulp.series(browserSyncReload))
+    gulp.watch("./public/**/*.css", gulp.series(browserSyncReload))
 }
 
 exports.watch = gulp.parallel([buildStyles, watchPhp, watchSass, watchJS, watchCSS, connectSync])

@@ -6,16 +6,16 @@ use App\Core\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 
-Route::get("/:nice", function (Request $req) {
-    return json_encode($req->attributes->all());
-});
+Route::get("/{user}/{nice}", function (Request $req) {
+    return json_encode($req->query->all());
+})->name("nice");
 
 
 Route::get("/", function () {
-    return view("home", ["working" => "lmao"]);
-});
+    return redirect()->route("nice", ["nice" => "nice"]);
+})->name("home");
 
-Route::get("/test", [TesterController::class, "test"]);
+Route::get("/test", [TesterController::class, "test"])->name("test");
 
 
 Route::group("/api", function () {
