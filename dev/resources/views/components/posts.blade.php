@@ -3,14 +3,14 @@
 <div class="posts">
     @forelse($posts as $post)
         <div class="post">
-            <a class="post__poster">
+            <a class="post__poster" href="/posts/{{$post->id}}">
                 <img
                         src="{{$post->poster}}"
                         alt="{{$post->title}}" loading="lazy"
                 >
             </a>
             <div class="post__data">
-                <a class="post__data_main">
+                <a class="post__data_main" href="/posts/{{$post->id}}">
                     <span class="post__title">{{$post->title}}</span>
                     <span class="post__year">({{$post->year}})</span>
                 </a>

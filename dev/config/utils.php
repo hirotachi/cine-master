@@ -15,14 +15,14 @@ function view($path, $data = []): string
 
     $blade->directive("styles", function ($file = "default") {
         return "<?php \$__env->startPush('styles'); ?>
-        <link rel='stylesheet' href='./css/<?=$file;?>.css'>
+        <link rel='stylesheet' href='/css/<?=$file;?>.css'>
         <?php \$__env->stopPush(); ?>
     ";
     });
 
     $blade->directive("scripts", function ($file = "default") {
         return "<?php \$__env->startPush('scripts'); ?>
-        <script  href='./js/<?=$file;?>.js'>
+        <script  href='/js/<?=$file;?>.js'>
         <?php \$__env->stopPush(); ?>
     ";
     });
