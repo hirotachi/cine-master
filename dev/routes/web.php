@@ -7,12 +7,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 Route::get("/{user}/{nice}", function (Request $req) {
-    return json_encode($req->query->all());
+    return json_encode($req->attributes->all());
 })->name("nice");
 
 
 Route::get("/", function () {
-    return [1, 2, 3];
+    return redirect("/cool");
 })->name("home");
 
 Route::get("/test", [TesterController::class, "test"])->name("test");

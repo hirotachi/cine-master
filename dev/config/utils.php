@@ -14,7 +14,8 @@ function view($path, $data): string
 
 function redirect(string $path = "")
 {
-    return new RedirectResponse($path);
+    $redirectResponse = new RedirectResponse($path === "" ? "/" : $path);
+    return $path === "" ? $redirectResponse : $redirectResponse->getResponse();
 }
 
 function response(?string $content = "", int $status = Response::HTTP_OK, array $headers = []): Response

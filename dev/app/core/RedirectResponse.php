@@ -7,18 +7,31 @@ use Symfony\Component\HttpFoundation\RedirectResponse as RResponse;
 
 class RedirectResponse
 {
-    protected string $route;
+    protected RResponse $response;
 
-    public function __construct($route)
+    /**
+     * @param  string  $route
+     */
+    public function __construct(string $route)
     {
-        $this->route = $route;
+        $this->response = new RResponse($route);
+    }
+
+    /**
+     * @return RResponse
+     */
+    public function getResponse(): RResponse
+    {
+        return $this->response;
     }
 
     public function route(string $routeName, array $params = [], int $statusCode = 302)
     {
         $handler = Route::getRouteByName($routeName);
         $url = self::generateRouteURL($handler->uri, $params);
-        return new RResponse($url, $statusCode);
+        $this->response->setTargetUrl($url);
+        $this->response->setStatusCode($statusCode);
+        return $this->getResponse();
     }
 
 
