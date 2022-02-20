@@ -1,0 +1,14 @@
+.home {
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .home {
+    padding: 0 5%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .home {
+    padding: 0 15%;
+  }
+}

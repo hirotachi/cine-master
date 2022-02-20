@@ -2,5 +2,17 @@
 
 
 .home {
+  margin: 2rem 0;
+  @include normalizePadding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   background-color: green;
+
+  &__more {
+    border: 1px solid $white;
+    padding: 1rem;
+  }
 }
+

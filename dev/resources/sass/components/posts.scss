@@ -1,0 +1,68 @@
+@use "../abstracts" as *;
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__poster {
+    height: 22rem;
+    @include tablet {
+      height: 33rem;
+    }
+    @include desktop {
+      height: clamp(25rem, 22vw, 35rem);
+    }
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+  }
+
+  &__data {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    gap: .2rem;
+    @include tablet {
+      font-size: 1.6rem;
+    }
+
+    &_main {
+
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__year {
+    font-size: 1.2rem;
+    color: $secondary-text-color;
+    margin-left: .2rem;
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__rating {
+    font-size: 1.1rem;
+  }
+}
