@@ -64,5 +64,8 @@
 
   &__rating {
     font-size: 1.1rem;
+    @include desktop {
+      font-size: 1.3rem;
+    }
   }
 }

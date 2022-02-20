@@ -6,13 +6,22 @@
   @include normalizePadding;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2rem;
-  background-color: green;
 
   &__more {
-    border: 1px solid $white;
-    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba($primary-text-color, .2);
+    text-transform: capitalize;
+    display: inline-block;
+    transition: all .2s ease;
+    width: fit-content;
+    align-self: center;
+
+    &:hover {
+      background-color: rgba($primary-text-color, .2);
+    }
   }
 }
 

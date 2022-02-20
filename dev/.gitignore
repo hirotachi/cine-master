@@ -4,3 +4,5 @@ cache
 .env
 .env.*
 public/**/*.{css,js}
+/public/css/
+/public/js/
