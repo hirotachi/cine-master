@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+
+
+.navigation {
+
+
+  &__main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem $mobile-spacing;
+    @include tablet {
+      padding: 2rem $tablet-spacing;
+    }
+    @include desktop {
+      padding: 2rem $desktop-spacing;
+    }
+  }
+
+  &__menu {
+    //background-color: green;
+    padding: 1.3rem $mobile-spacing;
+    @include tablet {
+      padding: 0 $tablet-spacing;
+    }
+    @include desktop {
+      padding: 0 $desktop-spacing;
+    }
+  }
+
+  &__other {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    a {
+      text-transform: capitalize;
+    }
+  }
+
+  &__menu_btn {
+    display: flex;
+    cursor: pointer;
+    gap: .4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &--open {
+      span {
+
+        &:nth-child(2) {
+          transform: translateY(-.8rem);
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+      @include size(.5rem);
+      border-radius: 50%;
+      background-color: white;
+      transition: all .2s ease;
+
+    }
+  }
+
+
+}

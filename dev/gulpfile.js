@@ -15,6 +15,7 @@ function connectSync() {
     }, function () {
         browserSync({
             proxy: '127.0.0.1:8000',
+            notify: false
         });
     });
 }

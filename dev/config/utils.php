@@ -27,7 +27,6 @@ function view($path, $data = []): string
     ";
     });
 
-
     if (!$blade->exists($path)) {
         return "not found";
     }

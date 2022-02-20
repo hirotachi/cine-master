@@ -1,3 +1,4 @@
 @component("layouts.layout")
-    <div>home page</div>
+    @styles("pages/home")
+    <div class="home">home page</div>
 @endcomponent
