@@ -7,10 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$title ?? "cine master"}}</title>
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     @stack("styles")
 </head>
 <body>
-<div>navigation</div>
+@include("layouts.navigation")
 {{$slot}}
 <div>footer</div>
 @stack("scripts")

@@ -1,4 +1,2 @@
-body {
-  background-color: tomato;
-  color: black;
-}
+@use "abstracts";
+@use "base";

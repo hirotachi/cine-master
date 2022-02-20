@@ -1,4 +1,3 @@
-@component("components.layout")
-    @styles("pages/login")
+@component("layouts.layout")
     <div>login page</div>
-@endcomponent()
+@endcomponent
