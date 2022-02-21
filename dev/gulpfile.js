@@ -33,9 +33,18 @@ function watchPhp() {
 }
 
 function watchJS() {
-    gulp.watch("./public/js/**/*.js", gulp.series(browserSyncReload))
+    cleanScripts();
+    buildScripts();
+    gulp.watch("./resources/js/**/*.js", gulp.series(buildScripts, browserSyncReload))
 }
 
+function cleanScripts() {
+    return del(["./public/js/**/*.js"])
+}
+
+function buildScripts() {
+    return gulp.src("./resources/js/**/*.js").pipe(gulp.dest("./public/js"))
+}
 
 function buildStyles() {
     return gulp
@@ -56,11 +65,9 @@ function cleanStyles() {
 
 function watchSass() {
     cleanStyles();
-    gulp.watch("./resources/sass/**/*.scss", gulp.series(buildStyles))
+    buildStyles();
+    gulp.watch("./resources/sass/**/*.scss", gulp.series(buildStyles, browserSyncReload))
 }
 
-function watchCSS() {
-    gulp.watch("./public/**/*.css", gulp.series(browserSyncReload))
-}
 
-exports.watch = gulp.parallel([buildStyles, watchPhp, watchSass, watchJS, watchCSS, connectSync])
+exports.watch = gulp.parallel([watchPhp, watchSass, watchJS, connectSync])
