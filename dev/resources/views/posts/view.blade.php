@@ -36,7 +36,9 @@
                     <p class="details__description">{{$post->description}}</p>
                 </div>
                 <div class="comments">
-                    <h3 class="comments__title">Comments @if(count($post->comments) > 0) (10) @endif()</h3>
+                    <h3 class="comments__title">
+                        Comments @if(count($post->comments) > 0)({{count($post->comments)}})@endif
+                    </h3>
                     <form class="form" method="post">
                         <textarea required oninput="handleInput(this)" placeholder="Your Comment"
                                   name="comment"></textarea>

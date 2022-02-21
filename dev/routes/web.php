@@ -59,6 +59,10 @@ Route::get("/posts/{id}/edit", function (Request $req) {
     return view("posts.form", [...$post, "operation" => "update", "_formMethod" => "put"]);
 });
 
+Route::put("/posts/{id}/edit", function (Request $req) {
+    echo json_encode($req->getBody());
+});
+
 
 Route::get("/login", function () {
     return view("login");

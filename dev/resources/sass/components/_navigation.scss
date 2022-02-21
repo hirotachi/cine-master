@@ -32,8 +32,11 @@
 
   &__other {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
+    @include tablet {
+      gap: 2rem;
+    }
 
     a {
       text-transform: capitalize;
@@ -72,5 +75,37 @@
     }
   }
 
+  &__create {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    transition: all .2s ease;
+    @include tablet {
+      background-color: $primary-text-color;
+      color: $primary-bg-color;
+      padding: .5rem 2rem;
+      &:hover {
+        color: $primary-text-color;
+        background-color: transparent;
+      }
+    }
 
+    span {
+      display: inline-block;
+
+      &:first-of-type {
+        font-size: 2rem;
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &:last-of-type {
+        display: none;
+        @include tablet {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }

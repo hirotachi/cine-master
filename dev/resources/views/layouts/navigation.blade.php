@@ -11,6 +11,10 @@
                 <i class="fal fa-search"></i>
             </span>
             <a href="/login" class="navigation__login">sign in</a>
+            <a title="Create Post" href="/posts/create" class="navigation__create">
+                <span><i class="fal fa-plus-square"></i></span>
+                <span>create</span>
+            </a>
         </div>
     </div>
     {{--    <div class="navigation__menu">--}}
