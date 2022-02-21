@@ -18,6 +18,13 @@ Route::get("/", function () {
 });
 
 Route::get("/posts/{id}", function (Request $req) {
+    $comment = (object) [
+        "content" => "Hi adam! could you take a quick look at these Landing Page designs ?\n Thanks so much.",
+        "author" => (object) [
+            "fullName" => "said Oudouane",
+            "avatar" => "https://images.unsplash.com/photo-1504553101389-41a8f048c3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=823&q=80"
+        ]
+    ];
     $post = [
         "id" => $req->attributes->get("id"),
         "title" => "joker",
@@ -26,7 +33,8 @@ Route::get("/posts/{id}", function (Request $req) {
         "year" => 2015,
         "genres" => ["comedy", "action"],
         "description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "banner" => "https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1280_.jpg"
+        "banner" => "https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1280_.jpg",
+        "comments" => [$comment]
     ];
     $obj = (object) $post;
     return view("post", ["post" => $obj]);

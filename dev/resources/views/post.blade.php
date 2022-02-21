@@ -1,5 +1,6 @@
 @component("layouts.layout")
     @styles("pages/post")
+    @styles("components/comments")
     <div class="post">
         <div class="post__banner"><img src="{{$post->banner}}" alt="{{$post->title}}"></div>
         <div class="post__main">
@@ -35,12 +36,39 @@
                     <p class="details__description">{{$post->description}}</p>
                 </div>
                 <div class="comments">
-                    <h3>Comments</h3>
-                    <div>comment input</div>
-                    <div>list of comments</div>
+                    <h3 class="comments__title">Comments @if(count($post->comments) > 0) (10) @endif()</h3>
+                    <form class="form">
+                        <textarea oninput="handleInput(this)" placeholder="Your comment" name="comment"></textarea>
+                        <button class="form__submit">publish</button>
+                    </form>
+                    <div class="comments__list">
+                        @foreach($post->comments as $comment)
+                            <div class="comment">
+                                <div class="author">
+                                    <span class="author__avatar">
+                                        <img src="{{$comment->author->avatar}}"
+                                             alt="{{$comment->author->fullName}}"
+                                        >
+                                    </span>
+                                    <span class="author__name">{{$comment->author->fullName}}</span>
+                                </div>
+                                <p class="comment__content">{{$comment->content}}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
+    <script>
+        function handleInput(target) {
+            if (!target.value) {
+                target.removeAttribute("style");
+                return;
+            }
+            target.style.height = "auto";
+            target.style.height = `${target.scrollHeight / 10}rem`;
+        }
+    </script>
 @endcomponent

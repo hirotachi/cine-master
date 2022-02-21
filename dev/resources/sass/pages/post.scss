@@ -116,24 +116,6 @@ $more-color: lighten($secondary-text-color, 10%);
 
     .genres {
       @extend %genres;
-
-      //text-transform: capitalize;
-      //display: flex;
-      //flex-wrap: wrap;
-      //
-      //span {
-      //  &:after {
-      //    content: "/";
-      //    display: inline-block;
-      //    margin: 0 0.2rem;
-      //  }
-      //
-      //  &:last-of-type {
-      //    &:after {
-      //      display: none;
-      //    }
-      //  }
-      //}
     }
   }
 
@@ -143,6 +125,9 @@ $more-color: lighten($secondary-text-color, 10%);
     @include tablet {
       font-weight: 500;
       font-size: 2.5rem;
+    }
+    @include desktop {
+      font-size: 3rem;
     }
 
     span {
@@ -188,7 +173,6 @@ $more-color: lighten($secondary-text-color, 10%);
     display: none;
     padding: 1rem;
     font-size: 1.4rem;
-    border-right: none;
     color: lighten($more-color, 10%);
     @include tablet {
       display: flex;
@@ -215,7 +199,7 @@ $more-color: lighten($secondary-text-color, 10%);
     }
   }
 
-  .comments {
-    margin-top: 2rem;
-  }
+
 }
+
+
