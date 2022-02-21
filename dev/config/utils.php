@@ -27,6 +27,10 @@ function view($path, $data = []): string
     ";
     });
 
+    $blade->directive("method", function ($method) {
+        return "<input type='hidden' value=$method name='_method'/>";
+    });
+
     if (!$blade->exists($path)) {
         return "not found";
     }

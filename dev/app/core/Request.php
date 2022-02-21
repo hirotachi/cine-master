@@ -4,10 +4,27 @@ namespace App\Core;
 
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
-class Request
+class Request extends SymfonyRequest
 {
-    static function capture(): SymfonyRequest
+    static function capture(): self
     {
-        return SymfonyRequest::createFromGlobals();
+        $request = self::createFromGlobals();
+        $spoofedMethodKey = "_method";
+        $method = $request->request->get($spoofedMethodKey);
+        if ($method) {
+            $request->setMethod(strtolower($method));
+            $request->request->remove($spoofedMethodKey);
+        }
+        return $request;
+    }
+
+    public function getBody(): array
+    {
+        return $this->request->all();
+    }
+
+    public function getBodyAsObject(): object
+    {
+        return (object) $this->request->all();
     }
 }

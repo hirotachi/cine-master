@@ -1,8 +1,8 @@
 <?php
 
 
+use App\Core\Request;
 use App\Core\Route;
-use Symfony\Component\HttpFoundation\Request;
 
 
 Route::get("/", function () {
@@ -42,5 +42,10 @@ Route::get("/posts/{id}", function (Request $req) {
 
 Route::get("/login", function () {
     return view("login");
+});
+
+Route::put("/posts/{id}", function (Request $req) {
+
+    echo json_encode($req->getBody());
 });
 

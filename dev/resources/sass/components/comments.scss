@@ -6,6 +6,9 @@
   width: 100%;
   flex-direction: column;
   gap: 2rem;
+  @include desktop {
+    margin-top: 4rem;
+  }
 
   &__title {
 

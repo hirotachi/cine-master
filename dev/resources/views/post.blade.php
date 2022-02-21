@@ -37,8 +37,9 @@
                 </div>
                 <div class="comments">
                     <h3 class="comments__title">Comments @if(count($post->comments) > 0) (10) @endif()</h3>
-                    <form class="form">
-                        <textarea oninput="handleInput(this)" placeholder="Your comment" name="comment"></textarea>
+                    <form class="form" method="post">
+                        <textarea required oninput="handleInput(this)" placeholder="Your Comment"
+                                  name="comment"></textarea>
                         <button class="form__submit">publish</button>
                     </form>
                     <div class="comments__list">
