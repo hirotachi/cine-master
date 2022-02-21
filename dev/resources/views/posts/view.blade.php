@@ -2,6 +2,7 @@
     @styles("pages/post")
     @styles("components/comments")
     <div class="post">
+
         <div class="post__banner"><img src="{{$post->banner}}" alt="{{$post->title}}"></div>
         <div class="post__main">
             <div class="intro">
@@ -34,6 +35,9 @@
                         <span>4 July 2019 (USA)</span>
                     </div>
                     <p class="details__description">{{$post->description}}</p>
+                </div>
+                <div class="post__control">
+                    <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
                 </div>
                 <div class="comments">
                     <h3 class="comments__title">

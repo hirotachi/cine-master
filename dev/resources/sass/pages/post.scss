@@ -41,6 +41,28 @@ $more-color: lighten($secondary-text-color, 10%);
     }
   }
 
+  &__control {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: flex-end;
+
+    .edit {
+      padding: .8rem 1rem;
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      background-color: $primary-text-color;
+      color: $primary-bg-color;
+      text-transform: capitalize;
+      transition: all .2s ease;
+
+      &:hover {
+        background-color: transparent;
+        color: $primary-text-color;
+      }
+    }
+  }
+
   &__main {
     display: flex;
     flex-direction: column;
