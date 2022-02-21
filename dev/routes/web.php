@@ -58,6 +58,8 @@ Route::get("/posts/{id}/edit", function (Request $req) {
     ];
     return view("posts.form", [...$post, "operation" => "update", "_formMethod" => "put"]);
 });
+
+
 Route::get("/login", function () {
     return view("login");
 });
