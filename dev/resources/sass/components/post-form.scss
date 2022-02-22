@@ -1,7 +1,6 @@
 @use "../abstracts" as *;
 
 
-$input-bg: darken($placeholder-bg-color, 10%);
 .form {
   @include normalizePadding;
   margin: 2rem 0;

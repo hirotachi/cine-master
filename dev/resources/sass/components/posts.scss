@@ -25,7 +25,7 @@
       height: 33rem;
     }
     @include desktop {
-      height: clamp(25rem, 22vw, 35rem);
+      height: clamp(25rem, 24vw, 35rem);
     }
 
     img {
