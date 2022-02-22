@@ -1,6 +1,5 @@
 @component("layouts.layout")
     @styles("pages/auth")
-
     <div class="auth">
         <div class="auth__intro">
             <h1>{{$page === "login" ? "welcome back buddy" : "join us for free"}}</h1>

@@ -3,8 +3,10 @@
 
 function autoload($name)
 {
-    require_once "$name.php";
+    $filePath = "$name.php";
+    require_once $filePath;
 }
+
 
 spl_autoload_register("autoload");
 
