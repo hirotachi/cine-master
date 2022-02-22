@@ -38,7 +38,7 @@ class Handler
     private function getClassInstance($className)
     {
         if (!$className) {
-            die("class or controller not provided for Route");
+            die("class not provided");
         }
 
         $obj = self::$classInstances[$className] ?? null;
@@ -63,8 +63,8 @@ class Handler
             if (!class_exists($typeName)) {
                 continue;
             }
-            self::$classInstances[$typeName] ??= new $typeName;;
-            $result[] = self::$classInstances[$typeName];
+
+            $result[] = $this->getClassInstance($typeName);
         }
         return $result;
     }
@@ -96,8 +96,8 @@ class Handler
         return call_user_func_array($this->resolver, [$request]);
     }
 
-    public function name($handlerName)
+    public function name($routeName)
     {
-        Route::setRouteByName($handlerName, $this);
+        Route::setRouteByName($routeName, $this);
     }
 }

@@ -20,11 +20,13 @@ class AuthController
 
     public function login()
     {
-        return $this->userModel->tester();
+        // todo: implement me
+        return redirect()->route("home");
     }
 
     public function register()
     {
+        // todo: implement me
         return "tester from here";
     }
 
