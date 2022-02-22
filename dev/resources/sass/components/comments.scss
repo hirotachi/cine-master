@@ -1,0 +1,107 @@
+@use "../abstracts" as *;
+
+.comments {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  @include desktop {
+    margin-top: 4rem;
+  }
+
+  &__title {
+
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: .5rem;
+  align-items: flex-end;
+
+  textarea {
+    background-color: rgba($placeholder-bg-color, .5);
+    border-radius: .5rem;
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    resize: vertical;
+    height: 3.5rem;
+    min-height: 3.5rem;
+    transition: all .2s ease;
+
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    width: fit-content;
+    padding: .8rem 2rem;
+    text-transform: capitalize;
+    border: 1px solid rgba($placeholder-bg-color, .5);
+    background-color: $primary-text-color;
+    color: $primary-bg-color;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 1.4rem;
+
+    &:hover {
+      background-color: $primary-bg-color;
+      border-color: $primary-text-color;
+      color: $primary-text-color;
+    }
+  }
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__content {
+    font-size: 1.4rem;
+    opacity: .8;
+    padding-left: 1rem;
+    @include tablet {
+      padding-left: 2rem;
+    }
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__name {
+      text-transform: capitalize;
+      font-size: 1.4rem;
+
+    }
+
+    &__avatar {
+      display: inline-block;
+      @include size(4rem);
+      border-radius: 5rem;
+      overflow: hidden;
+      border: 1px solid $placeholder-bg-color;
+
+      img {
+        @include size(100%);
+        object-fit: cover;
+      }
+    }
+  }
+}

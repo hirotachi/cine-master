@@ -1,0 +1,6 @@
+{
+  "require": {
+    "symfony/http-foundation": "^6.0",
+    "jenssegers/blade": "^1.4"
+  }
+}

@@ -1,0 +1,227 @@
+@use "../abstracts" as *;
+
+$more-color: lighten($secondary-text-color, 10%);
+%genres {
+  text-transform: capitalize;
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    &:after {
+      content: "/";
+      display: inline-block;
+      margin: 0 0.2rem;
+    }
+
+    &:last-of-type {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.post {
+  margin-bottom: 2rem;
+
+  &__banner {
+    height: 20rem;
+    background-color: $placeholder-bg-color;
+    @include tablet {
+      height: 35rem;
+    }
+    @include desktop {
+      height: 40rem;
+      margin: 0 $desktop-spacing - 5%;
+    }
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+  }
+
+  &__control {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: flex-end;
+
+    .edit {
+      padding: .8rem 1rem;
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      background-color: $primary-text-color;
+      color: $primary-bg-color;
+      text-transform: capitalize;
+      transition: all .2s ease;
+
+      &:hover {
+        background-color: transparent;
+        color: $primary-text-color;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2rem;
+    @include normalizePadding;
+    @include tablet {
+      flex-direction: row;
+      justify-content: unset;
+      margin-top: 3rem;
+      gap: 6rem;
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-end;
+  @include tablet {
+    flex-direction: column;
+    align-items: unset;
+    margin-top: 3rem;
+  }
+  @include desktop {
+    margin-top: 5rem;
+  }
+
+  &__poster {
+    width: 15rem;
+    --height: 8rem;
+    @include tablet {
+      --height: 11rem;
+    }
+    @include desktop {
+      width: 20rem;
+      --height: 15rem;
+    }
+
+    height: var(--height);
+    position: relative;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: calc(var(--height) * 2);
+      object-fit: cover;
+      background-color: $placeholder-bg-color;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+  }
+
+  &__more {
+    border: 1px solid rgba($placeholder-bg-color, .5);
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: $more-color;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    @include tablet {
+      display: none;
+    }
+
+    .genres {
+      @extend %genres;
+    }
+  }
+
+  &__rating {
+    font-size: 2.2rem;
+    font-weight: bold;
+    @include tablet {
+      font-weight: 500;
+      font-size: 2.5rem;
+    }
+    @include desktop {
+      font-size: 3rem;
+    }
+
+    span {
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    @include desktop {
+      font-size: 4rem;
+    }
+
+    span {
+      font-size: .5em;
+      font-weight: 500;
+    }
+  }
+
+  &__main {
+    padding-left: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include desktop {
+      padding-left: 20%;
+    }
+  }
+
+  &__more {
+    gap: 2rem;
+    border: 1px solid rgba($placeholder-bg-color, .5);
+    display: none;
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: lighten($more-color, 10%);
+    @include tablet {
+      display: flex;
+    }
+    @include desktop {
+      gap: 3rem;
+    }
+
+    .genres {
+      @extend %genres;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+    }
+    @include desktop {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+
+
+}
+
+
