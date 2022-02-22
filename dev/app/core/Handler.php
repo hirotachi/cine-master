@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use ReflectionClass;
 use Symfony\Component\HttpFoundation\Request;
 
 class Handler
@@ -16,14 +17,18 @@ class Handler
     {
         if (is_array($resolver)) {
             $className = $resolver[0] ?? null;
+
             $obj = $this->getClassInstance($className);
             $this->resolver = $this->getClassMethod($obj, $resolver[1] ?? "__invoke");
         }
 
         if (!$this->resolver && is_string($resolver)) {
+
             $obj = $this->getClassInstance($resolver);
+
             $this->resolver = $this->getClassMethod($obj, "__invoke");
         }
+
         $this->resolver ??= $resolver;
 
         $this->uri = $uri;
@@ -38,13 +43,30 @@ class Handler
 
         $obj = self::$classInstances[$className] ?? null;
         if (!$obj && class_exists($className)) {
-            $obj = new $className;
+            $params = $this->getClassParams($className);
+            $obj = new $className(...$params);
             self::$classInstances[$className] = $obj;
         }
         if (!$obj) {
             die("could not instantiate $className doesnt exist.");
         }
         return $obj;
+    }
+
+    private function getClassParams($class): array
+    {
+        $result = [];
+        $reflectionClass = new ReflectionClass($class);
+        $params = $reflectionClass->getConstructor()?->getParameters() ?? [];
+        foreach ($params as $param) {
+            $typeName = $param->getType()->getName();
+            if (!class_exists($typeName)) {
+                continue;
+            }
+            self::$classInstances[$typeName] ??= new $typeName;;
+            $result[] = self::$classInstances[$typeName];
+        }
+        return $result;
     }
 
     private function getClassMethod($obj, $methodName)

@@ -85,17 +85,18 @@ class Route
         if ($methodRoutesMap) {
             $path = $request->getPathInfo();
             $handler = $methodRoutesMap[$path] ?? null;
-            if (!$handler) {
-                foreach ($methodRoutesMap as $regexURI => $value) {
-                    if (!$value->isDynamic) {
-                        continue;
-                    }
-                    preg_match("/^$regexURI$/", $path, $matches);
-                    if (count($matches) !== 0) {
-                        $request->attributes->add(array_slice($matches, 1));
-                        $handler = $value;
-                        break;
-                    }
+            if ($handler) {
+                return $handler;
+            }
+            foreach ($methodRoutesMap as $regexURI => $value) {
+                if (!$value->isDynamic) {
+                    continue;
+                }
+                preg_match("/^$regexURI$/", $path, $matches);
+                if (count($matches) !== 0) {
+                    $request->attributes->add(array_slice($matches, 1));
+                    $handler = $value;
+                    break;
                 }
             }
         };

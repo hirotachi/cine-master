@@ -4,6 +4,8 @@
 use App\Core\Request;
 use App\Core\Route;
 
+require_once "auth.php";
+
 
 Route::get("/", function () {
     $post = [
@@ -62,12 +64,5 @@ Route::put("/posts/{id}/edit", function (Request $req) {
     echo json_encode($req->getBody());
 });
 
-
-Route::get("/login", function () {
-    return view("auth", ["page" => "login"]);
-});
-Route::get("/register", function () {
-    return view("auth", ["page" => "register"]);
-});
 
 
