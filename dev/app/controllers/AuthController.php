@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Core\Request;
 use App\Models\User;
 
 class AuthController
@@ -21,13 +22,14 @@ class AuthController
     public function login()
     {
         // todo: implement me
-        return redirect()->route("home");
+        return "add login logic";
+//        return redirect()->route("home");
     }
 
-    public function register()
+    public function register(Request $req)
     {
         // todo: implement me
-        return "tester from here";
+        $this->userModel->create($req->getBody());
     }
 
 }

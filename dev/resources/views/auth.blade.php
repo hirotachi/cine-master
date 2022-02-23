@@ -8,7 +8,7 @@
         <form action="/{{$page}}" method="post" class="form">
             @if($page === "register")
                 @include("components.input", ["placeholder" => "John Smith", "label" => "full name", "name" => "name"] )
-                @include("components.input", ["placeholder" => "Your email address", "label" => "email"] )
+                @include("components.input", ["placeholder" => "Your email address", "label" => "email", "type" => "email"] )
             @endif
             @include("components.input", ["placeholder" => $page === "login" ?  "Username or email" : "Username", "label" => "username"] )
             @include("components.input", ["placeholder" => "********", "label" => "password"] )

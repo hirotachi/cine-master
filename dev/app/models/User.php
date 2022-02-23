@@ -2,10 +2,17 @@
 
 namespace App\Models;
 
-class User
+class User extends Model
 {
-    public function tester()
+    protected $table = "users";
+
+
+    public function create($data)
     {
-        return "hey from user hey bro";
+        $f = $this->connection->prepare("select * from $this->table");
+        $f->execute();
+        var_dump($f->fetchAll());
+        
+        echo "hey from user hey bro";
     }
 }
