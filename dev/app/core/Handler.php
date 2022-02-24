@@ -91,9 +91,9 @@ class Handler
     {
         if (is_array($this->resolver)) {
             list($obj, $method) = $this->resolver;
-            return $obj->$method($request);
+            return $obj->$method($request, ...$request->attributes->all());
         }
-        return call_user_func_array($this->resolver, [$request]);
+        return call_user_func_array($this->resolver, [$request, ...$request->attributes->all()]);
     }
 
     public function name($routeName)

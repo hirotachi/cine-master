@@ -23,3 +23,29 @@ function loadEnv($envName, $default = "")
     $dotenv->load();
     return $_ENV[$envName] ?? $default;
 }
+
+function startSession()
+{
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+}
+
+function destroySession()
+{
+    if (isset($_SESSION)) {
+        session_destroy();
+        $_SESSION = null;
+    }
+}
+
+function verifyArrayKeys($requiredKeys, $arr): bool|array
+{
+    $notFilled = [];
+    foreach ($requiredKeys as $req) {
+        if (!isset($arr[$req])) {
+            $notFilled[] = $req;
+        }
+    }
+    return count($notFilled) > 0 ? $notFilled : false;
+}

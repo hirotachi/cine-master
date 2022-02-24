@@ -1,5 +1,6 @@
 @use "../abstracts" as *;
 
+
 .auth {
   @include normalizePadding;
   margin: 4rem 0;
@@ -38,16 +39,21 @@
       gap: 3rem;
     }
 
+    &__error {
+      color: $error-color;
+    }
+
     .input {
       padding: 1.2rem 1rem;
       border: 1px solid $placeholder-bg-color;
       background-color: $input-bg;
-      color: white;
+      color: inherit;
 
 
       &:focus {
         outline: none;
       }
+
     }
 
     &__submit {
@@ -86,7 +92,16 @@
           gap: .5rem;
         }
       }
+    }
 
+    &__field {
+      &--error {
+        color: $error-color;
+
+        .input {
+          border-color: currentColor;
+        }
+      }
     }
 
 
