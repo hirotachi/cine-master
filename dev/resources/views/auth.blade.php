@@ -14,7 +14,7 @@
                 @include("components.input", ["placeholder" => "Your email address", "label" => "email", "type" => "email", "errorClass" => "form__field--error"] )
             @endif
             @include("components.input", ["placeholder" => $page === "login" ?  "Username or email" : "Username", "label" => "username", "errorClass" => "form__field--error"] )
-            @include("components.input", ["placeholder" => "********", "label" => "password", "errorClass" => "form__field--error"] )
+            @include("components.input", ["placeholder" => "********","type"=>"password", "label" => "password", "errorClass" => "form__field--error"] )
             <button class="form__submit">{{$page === "login" ? "Sign In" : "Create Account"}}</button>
         </form>
         <p class="auth__register">

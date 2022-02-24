@@ -33,6 +33,7 @@ function startSession()
 
 function destroySession()
 {
+    startSession();
     if (isset($_SESSION)) {
         session_destroy();
         $_SESSION = null;

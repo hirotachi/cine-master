@@ -10,7 +10,9 @@
             <span class="navigation__search">
                 <i class="fal fa-search"></i>
             </span>
-            <a href="/login" class="navigation__login">sign in</a>
+
+            <a href="/{{\App\Middleware\Auth::check() ? "logout" : "login"}}"
+               class="navigation__login">{{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>
             <a title="Create Post" href="/posts/create" class="navigation__create">
                 <span><i class="fal fa-plus-square"></i></span>
                 <span>create</span>
