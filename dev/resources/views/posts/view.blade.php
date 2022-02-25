@@ -36,18 +36,22 @@
                     </div>
                     <p class="details__description">{{$post->description}}</p>
                 </div>
-                <div class="post__control">
-                    <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
-                </div>
+                @if(\App\Middleware\Auth::check())
+                    <div class="post__control">
+                        <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
+                    </div>
+                @endif
                 <div class="comments">
                     <h3 class="comments__title">
                         Comments @if(count($post->comments) > 0)({{count($post->comments)}})@endif
                     </h3>
-                    <form class="form" method="post">
+                    @if(\App\Middleware\Auth::check())
+                        <form class="form" method="post">
                         <textarea required oninput="handleInput(this)" placeholder="Your Comment"
                                   name="comment"></textarea>
-                        <button class="form__submit">publish</button>
-                    </form>
+                            <button class="form__submit">publish</button>
+                        </form>
+                    @endif
                     <div class="comments__list">
                         @foreach($post->comments as $comment)
                             <div class="comment">

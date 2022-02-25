@@ -93,7 +93,7 @@ class Handler
             list($obj, $method) = $this->resolver;
             return $obj->$method($request, ...$request->attributes->all());
         }
-        return call_user_func_array($this->resolver, [$request, ...$request->attributes->all()]);
+        return call_user_func_array($this->resolver, [$request]);
     }
 
     public function name($routeName)
