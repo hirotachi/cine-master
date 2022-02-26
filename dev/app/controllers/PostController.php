@@ -5,18 +5,21 @@ namespace App\Controllers;
 use App\Core\Request;
 use App\Middleware\Auth;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController
 {
 
     private Post $model;
+    private User $userModel;
 
     /**
      * @param  Post  $model
      */
-    public function __construct(Post $model)
+    public function __construct(Post $model, User $userModel)
     {
         $this->model = $model;
+        $this->userModel = $userModel;
     }
 
     public function home()
@@ -48,7 +51,7 @@ class PostController
         }
         $post->comments = [];
         $post->genres = explode(";", $post->genres);
-        return view("posts.view", ["post" => $post]);
+        return view("posts.view", ["post" => $post, "author" => $this->userModel->findByID($post->author_id)]);
     }
 
     public function edit(Request $req)

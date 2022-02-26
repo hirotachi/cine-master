@@ -87,15 +87,17 @@ abstract class Model
         return !$f->execute($placeholderValues) ? false : $f->fetchAll(PDO::FETCH_OBJ);
     }
 
-//    public function save(): bool
-//    {
-//        if (!count($this->updated) || !count($this->data)) {
-//            return true;
-//        }
-//        $updateColumnsString = implode(",", $this->getUpdateColumnsString($this->updated));
-//        $statement = $this->connection->prepare("update $this->table set ".$updateColumnsString." where id = :id");
-//        return $statement->execute(["id" => $this->data["id"]]);
-//    }
+    protected function getDefaults(): array
+    {
+        return array_map(function ($default) {
+            return is_callable($default) ? $default() : $default;
+        }, $this->defaults);
+    }
+
+    public function verifyRequired($data): bool|array
+    {
+        return verifyArrayKeys($this->required, $data);
+    }
 
     protected function getNamedPlaceholders($data): array
     {
@@ -114,17 +116,5 @@ abstract class Model
         return array_map(function ($key) {
             return "$key = :$key";
         }, array_keys($data));
-    }
-
-    protected function getDefaults(): array
-    {
-        return array_map(function ($default) {
-            return is_callable($default) ? $default() : $default;
-        }, $this->defaults);
-    }
-
-    public function verifyRequired($data): bool|array
-    {
-        return verifyArrayKeys($this->required, $data);
     }
 }

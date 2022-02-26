@@ -102,6 +102,11 @@ $more-color: lighten($secondary-text-color, 10%);
     margin-top: 5rem;
   }
 
+  &__author {
+    color: $primary-text-color;
+    text-transform: capitalize;
+  }
+
   &__poster {
     width: 15rem;
     --height: 8rem;
@@ -175,6 +180,11 @@ $more-color: lighten($secondary-text-color, 10%);
   gap: 1.5rem;
   margin-top: 1rem;
   flex: 1;
+
+  &__author {
+    color: $primary-text-color;
+    text-transform: capitalize;
+  }
 
   &__title {
     font-size: 3rem;
