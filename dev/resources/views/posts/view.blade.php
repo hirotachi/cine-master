@@ -31,7 +31,7 @@
                                 <span>{{$genre}}</span>
                             @endforeach
                         </div>
-                        <span class="details__author">Created by ( {{$author->name}} )</span>
+                        <span class="details__author">Created by ( {{$usersMapByID[$post->author_id]->name}} )</span>
                     </div>
                     <p class="details__description">{{$post->description}}</p>
                 </div>

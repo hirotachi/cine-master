@@ -71,18 +71,27 @@ abstract class Model
         return $st->fetch(PDO::FETCH_OBJ);
     }
 
-    public function findAll($filter = "", int $limit = null, int $offset = null, $placeholderValues = []): bool|array
-    {
-        $query = "select * from $this->table $filter";
+    public function findAll(
+        $filter = "",
+        $placeholderValues = [],
+        $orderBy = "id desc",
+        int $limit = null,
+        int $offset = null
+    ): bool|array {
+        $query = ["select * from $this->table $filter"];
         if ($limit) {
             $placeholderValues["limit"] = $limit;
-            $query .= "limit :limit";
+            $query[] = " limit :limit";
         }
         if ($limit && $offset) {
             $placeholderValues["offset"] = $offset;
-            $query .= "offset :offset";
+            $query[] = " offset :offset";
+        }
+        if ($orderBy) {
+            $query[] = "order by $orderBy";
         }
 
+        $query = implode(" ", $query);
         $f = $this->connection->prepare($query);
         return !$f->execute($placeholderValues) ? false : $f->fetchAll(PDO::FETCH_OBJ);
     }
