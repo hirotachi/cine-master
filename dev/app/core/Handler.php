@@ -82,8 +82,12 @@ class Handler
         return $this;
     }
 
-    public function middleware(string $middleware): static
+    public function middleware(string|callable $middleware): static
     {
+        if (is_string($middleware) && !Route::getMiddleware($middleware)) {
+            $obj = Dependency::getClassInstance($middleware);
+            $middleware = Dependency::getClassMethod($obj, "handle");
+        }
         $this->middlewareList[] = $middleware;
         return $this;
     }

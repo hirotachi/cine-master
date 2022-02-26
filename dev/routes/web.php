@@ -16,7 +16,7 @@ Route::get("/", function () {
         "year" => 2015
     ];
     return view("home", ["posts" => array_fill(0, 8, (object) $post)]);
-})->name("home")->middleware("auth");
+})->name("home");
 
 Route::get("/posts/{id}", function (Request $req) {
     $comment = (object) [
@@ -43,7 +43,7 @@ Route::get("/posts/{id}", function (Request $req) {
 
 Route::get("/posts/create", function () {
     return view("posts.form", ["_formAction" => "/posts"]);
-});
+})->middleware("auth");
 
 
 Route::get("/posts/{id}/edit", function (Request $req) {
@@ -58,7 +58,7 @@ Route::get("/posts/{id}/edit", function (Request $req) {
         "banner" => "https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1280_.jpg",
     ];
     return view("posts.form", [...$post, "operation" => "update", "_formMethod" => "put"]);
-});
+})->middleware("auth");
 
 Route::put("/posts/{id}/edit", function (Request $req) {
     echo json_encode($req->getBody());
