@@ -42,14 +42,15 @@ $more-color: lighten($secondary-text-color, 10%);
   }
 
   &__control {
-    display: flex;
+    display: grid;
     margin: 1rem 0;
-    justify-content: flex-end;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 1rem;
 
-    .edit {
+    .edit, .delete {
       padding: .8rem 1rem;
       text-align: center;
-      width: 100%;
       display: inline-block;
       background-color: $primary-text-color;
       color: $primary-bg-color;
@@ -59,6 +60,15 @@ $more-color: lighten($secondary-text-color, 10%);
       &:hover {
         background-color: transparent;
         color: $primary-text-color;
+      }
+    }
+
+    .delete {
+      background-color: $error-color;
+      color: $primary-text-color;
+
+      &:hover {
+        color: $error-color;
       }
     }
   }

@@ -31,7 +31,14 @@ Route::group("/posts", function ($path) {
     Route::post("", [PostController::class, "create"])->middleware("auth");
     Route::get("/{id}", [PostController::class, "view"]);
     Route::get("/{id}/edit", [PostController::class, "edit"])->middleware("auth");
+    Route::get("/{id}/delete", [PostController::class, "delete"])->middleware("auth");
     Route::put("/{id}", [PostController::class, "update"])->middleware("auth");
+
+    Route::group("/{post}/comments", function ($path) {
+        Route::post("", function () {
+            return "comments";
+        });
+    });
 });
 
 

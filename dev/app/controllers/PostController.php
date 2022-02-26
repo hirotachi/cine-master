@@ -78,4 +78,21 @@ class PostController
         return redirect("/posts/$postId");
     }
 
+    public function delete(Request $req)
+    {
+        $postId = $req->attributes->get("id");
+        $post = $this->model->findByID($postId);
+        if (!$post) {
+            return response(view("404"), \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND);
+        }
+        if ($post->author_id !== Auth::getUserID()) {
+            return response(view("403"), \Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+        }
+        $deleted = $this->model->deleteByID($postId);
+        if (!$deleted) {
+            return redirect($req->getReferer());
+        }
+        return redirect()->route("home");
+    }
+
 }

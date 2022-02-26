@@ -39,6 +39,7 @@
                 @if(\App\Middleware\Auth::isOwner($post->author_id))
                     <div class="post__control">
                         <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
+                        <a href="/posts/{{$post->id}}/delete" class="delete">delete post</a>
                     </div>
                 @endif
                 <div class="comments">

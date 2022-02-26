@@ -55,7 +55,7 @@ abstract class Model
 
     public function delete($filter, $placeholderValues = []): bool
     {
-        $f = $this->connection->query("delete from $this->table where $filter");
+        $f = $this->connection->prepare("delete from $this->table where $filter");
         return $f->execute($placeholderValues);
     }
 
