@@ -26,11 +26,8 @@ use App\Core\Route;
 //    return view("posts.view", ["post" => (object) $post]);
 //});
 
-Route::get("/posts/create", function () {
-    return view("posts.form", ["_formAction" => "/posts"]);
-})->middleware("auth")->name("createPost");
 
-
+Route::view("/posts/create", "posts.form", ["_formAction", "/posts"])->name("createPost")->middleware("auth");
 Route::post("/posts", [PostController::class, "create"])->middleware("auth");
 
 Route::get("/posts/{id}", [PostController::class, "view"]);

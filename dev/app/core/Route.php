@@ -144,4 +144,11 @@ class Route
             self::$middlewareList[$name] = $handler;
         }
     }
+
+    public static function view(string $path, string $viewPath, $data = []): Handler
+    {
+        return self::get($path, function () use ($data, $viewPath) {
+            return view($viewPath, $data);
+        }, $data);
+    }
 }
