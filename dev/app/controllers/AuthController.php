@@ -53,9 +53,10 @@ class AuthController
         return redirect()->route("home");
     }
 
-    public function logout(): RedirectResponse
+    public function logout(Request $req): RedirectResponse
     {
+        $referer = $req->headers->get("referer");
         Auth::logout();
-        return redirect()->route("home");
+        return redirect($referer);
     }
 }
