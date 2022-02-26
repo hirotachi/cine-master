@@ -26,10 +26,13 @@ use App\Core\Route;
 //    return view("posts.view", ["post" => (object) $post]);
 //});
 
+Route::group("/posts", function ($path) {
+    Route::view("/create", "posts.form", ["_formAction" => $path])->name("createPost")->middleware("auth");
+    Route::post("", [PostController::class, "create"])->middleware("auth");
+    Route::get("/{id}", [PostController::class, "view"]);
+    Route::get("/{id}/edit", [PostController::class, "edit"])->middleware("auth");
+    Route::put("/{id}", [PostController::class, "update"])->middleware("auth");
+});
 
-Route::view("/posts/create", "posts.form", ["_formAction", "/posts"])->name("createPost")->middleware("auth");
-Route::post("/posts", [PostController::class, "create"])->middleware("auth");
 
-Route::get("/posts/{id}", [PostController::class, "view"]);
-Route::get("/posts/{id}/edit", [PostController::class, "edit"])->middleware("auth");
-Route::put("/posts/{id}", [PostController::class, "update"])->middleware("auth");
+

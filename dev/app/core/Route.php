@@ -110,7 +110,7 @@ class Route
 //        stacking groups on each other
         $older = self::$currentGroup ?? "";
         self::$currentGroup = $older.$groupPath;
-        $setupRouteStacks();
+        $setupRouteStacks(self::$currentGroup);
         self::$currentGroup = $older;
     }
 
