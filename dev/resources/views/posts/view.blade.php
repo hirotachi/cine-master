@@ -2,7 +2,6 @@
     @styles("pages/post")
     @styles("components/comments")
     <div class="post">
-
         <div class="post__banner"><img src="{{$post->banner}}" alt="{{$post->title}}"></div>
         <div class="post__main">
             <div class="intro">
@@ -10,9 +9,7 @@
                 <div class="intro__details">
                     <p class="intro__rating">{{$post->rating}}<span>/10</span></p>
                     <div class="intro__more">
-                        <span>18+</span>
-                        <span>2h 12min</span>
-                        <span>4 July 2019 (USA)</span>
+                        <span class="intro__author">Created by ( {{$usersMapByID[$post->author_id]->name}} )</span>
                         <div class="genres">
                             @foreach($post->genres as $genre)
                                 <span>{{$genre}}</span>
@@ -25,43 +22,53 @@
                 <p class="details__title">{{$post->title}} <span>({{$post->year}})</span></p>
                 <div class="details__main">
                     <div class="details__more">
-                        <span>18+</span>
-                        <span>2h 12min</span>
                         <div class="genres">
                             @foreach($post->genres as $genre)
                                 <span>{{$genre}}</span>
                             @endforeach
                         </div>
-                        <span>4 July 2019 (USA)</span>
+                        <span class="details__author">Created by ( {{$usersMapByID[$post->author_id]->name}} )</span>
                     </div>
                     <p class="details__description">{{$post->description}}</p>
                 </div>
-                <div class="post__control">
-                    <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
-                </div>
+                @if(\App\Middleware\Auth::isOwner($post->author_id))
+                    <div class="post__control">
+                        <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
+                        <a href="/posts/{{$post->id}}/delete" class="delete">delete post</a>
+                    </div>
+                @endif
                 <div class="comments">
                     <h3 class="comments__title">
-                        Comments @if(count($post->comments) > 0)({{count($post->comments)}})@endif
+                        Comments @if(count($comments) > 0)({{count($comments)}})@endif
                     </h3>
-                    <form class="form" method="post">
+                    @if(\App\Middleware\Auth::check())
+                        <form class="form" action="/posts/{{$post->id}}/comments" method="post">
                         <textarea required oninput="handleInput(this)" placeholder="Your Comment"
-                                  name="comment"></textarea>
-                        <button class="form__submit">publish</button>
-                    </form>
+                                  name="content"></textarea>
+                            <button class="form__submit">publish</button>
+                        </form>
+                    @endif
                     <div class="comments__list">
-                        @foreach($post->comments as $comment)
+                        @forelse($comments as $comment)
+                            <?php $author = $usersMapByID[$comment->author_id];?>
                             <div class="comment">
                                 <div class="author">
                                     <span class="author__avatar">
-                                        <img src="{{$comment->author->avatar}}"
-                                             alt="{{$comment->author->fullName}}"
+                                        <img src="{{$avatar}}"
+                                             alt="{{$author->name}}"
                                         >
                                     </span>
-                                    <span class="author__name">{{$comment->author->fullName}}</span>
+                                    <span class="author__name">{{$author->name}}</span>
+                                    @if(\App\Middleware\Auth::isOwner($comment->author_id))
+                                        <a href="/posts/{{$post->id}}/comments/{{$comment->id}}/delete"
+                                           class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
+                                    @endif
                                 </div>
                                 <p class="comment__content">{{$comment->content}}</p>
                             </div>
-                        @endforeach
+                        @empty
+                            <p class="comments__placeholder">no comments</p>
+                        @endforelse
                     </div>
                 </div>
             </div>

@@ -14,6 +14,12 @@
 
   }
 
+  &__placeholder {
+    text-align: center;
+    text-transform: capitalize;
+    opacity: .8;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -83,6 +89,15 @@
     padding-left: 1rem;
     @include tablet {
       padding-left: 2rem;
+    }
+  }
+
+  &__delete {
+    margin-left: auto;
+    transition: all .2s ease;
+
+    &:hover {
+      color: $error-color;
     }
   }
 

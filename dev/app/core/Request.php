@@ -27,4 +27,9 @@ class Request extends SymfonyRequest
     {
         return (object) $this->request->all();
     }
+
+    public function getReferer(): ?string
+    {
+        return $this->headers->get("referer");
+    }
 }

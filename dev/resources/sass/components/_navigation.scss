@@ -19,6 +19,11 @@
     }
   }
 
+  &__logo {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
   &__menu {
     //background-color: green;
     padding: 1.3rem $mobile-spacing;

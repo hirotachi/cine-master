@@ -18,6 +18,6 @@
             </div>
         </div>
     @empty
-        <p class="posts__placeholder">no posts</p>
+        <p class="posts__placeholder">there are no posts currently</p>
     @endforelse
 </div>

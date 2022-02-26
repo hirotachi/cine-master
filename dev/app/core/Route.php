@@ -18,6 +18,7 @@ class Route
     static private $currentGroup = null;
     static private array $routesMap = array();
     static private array $routesByName = array();
+    static private array $middlewareList = array();
 
     /**
      * @param  string  $methodName
@@ -85,17 +86,18 @@ class Route
         if ($methodRoutesMap) {
             $path = $request->getPathInfo();
             $handler = $methodRoutesMap[$path] ?? null;
-            if (!$handler) {
-                foreach ($methodRoutesMap as $regexURI => $value) {
-                    if (!$value->isDynamic) {
-                        continue;
-                    }
-                    preg_match("/^$regexURI$/", $path, $matches);
-                    if (count($matches) !== 0) {
-                        $request->attributes->add(array_slice($matches, 1));
-                        $handler = $value;
-                        break;
-                    }
+            if ($handler) {
+                return $handler;
+            }
+            foreach ($methodRoutesMap as $regexURI => $value) {
+                if (!$value->isDynamic) {
+                    continue;
+                }
+                preg_match("/^$regexURI$/", $path, $matches);
+                if (count($matches) !== 0) {
+                    $request->attributes->add(array_slice($matches, 1));
+                    $handler = $value;
+                    break;
                 }
             }
         };
@@ -108,7 +110,7 @@ class Route
 //        stacking groups on each other
         $older = self::$currentGroup ?? "";
         self::$currentGroup = $older.$groupPath;
-        $setupRouteStacks();
+        $setupRouteStacks(self::$currentGroup);
         self::$currentGroup = $older;
     }
 
@@ -123,4 +125,30 @@ class Route
         return self::$routesByName[$name] ?? null;
     }
 
+    public static function getMiddleware(string $middleware)
+    {
+        return self::$middlewareList[$middleware] ?? null;
+    }
+
+    public static function middleware($middleware, $name = null)
+    {
+        $handler = $middleware;
+        if (!$name && is_string($handler)) {
+            $name = $handler;
+        }
+        if (is_string($handler)) {
+            $obj = Dependency::getClassInstance($handler);
+            $handler = Dependency::getClassMethod($obj, "handle");
+        }
+        if ($handler) {
+            self::$middlewareList[$name] = $handler;
+        }
+    }
+
+    public static function view(string $path, string $viewPath, $data = []): Handler
+    {
+        return self::get($path, function () use ($data, $viewPath) {
+            return view($viewPath, $data);
+        }, $data);
+    }
 }
