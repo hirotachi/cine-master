@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\controllers;
 
 
 use App\Core\Request;
@@ -30,7 +30,7 @@ class AuthController
             return view("auth",
                 ["errorFields" => $required, "message" => "please enter required input", "page" => "login"]);
         }
-        $user = $this->userModel->fetchOne("username = :username or email = :username", $data);
+        $user = $this->userModel->findOne("username = :username or email = :username", $data);
         if (!$user || !password_verify($data["password"], $user->password)) {
             return view("auth",
                 ["page" => "login", "errorFields" => $requiredKeys, "message" => "Username or password is wrong"]);

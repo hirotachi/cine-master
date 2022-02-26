@@ -61,17 +61,17 @@ abstract class Model
 
     public function findByID($id)
     {
-        return $this->fetchOne("id = :id", ["id" => $id]);
+        return $this->findOne("id = :id", ["id" => $id]);
     }
 
-    public function fetchOne($filter, $placeholderValues = [])
+    public function findOne($filter, $placeholderValues = [])
     {
         $st = $this->connection->prepare("select * from $this->table where $filter");
         $st->execute($placeholderValues);
         return $st->fetch(PDO::FETCH_OBJ);
     }
 
-    public function fetchAll($filter = "", int $limit = null, int $offset = null, $placeholderValues = []): bool|array
+    public function findAll($filter = "", int $limit = null, int $offset = null, $placeholderValues = []): bool|array
     {
         $query = "select * from $this->table $filter";
         if ($limit) {
