@@ -16,7 +16,7 @@ Route::get("/", function () {
         "year" => 2015
     ];
     return view("home", ["posts" => array_fill(0, 8, (object) $post)]);
-})->name("home");
+})->name("home")->middleware("auth");
 
 Route::get("/posts/{id}", function (Request $req) {
     $comment = (object) [

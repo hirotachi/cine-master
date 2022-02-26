@@ -2,8 +2,8 @@
 
 namespace App;
 
+use App\Core\Request;
 use App\Core\Route;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class Kernel

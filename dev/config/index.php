@@ -2,6 +2,7 @@
 
 
 require_once "view.php";
+require_once "middleware.php";
 require_once "utils.php";
 
 

@@ -18,6 +18,7 @@ class Route
     static private $currentGroup = null;
     static private array $routesMap = array();
     static private array $routesByName = array();
+    static private array $middlewareList = array();
 
     /**
      * @param  string  $methodName
@@ -124,4 +125,23 @@ class Route
         return self::$routesByName[$name] ?? null;
     }
 
+    public static function getMiddleware(string $middleware)
+    {
+        return self::$middlewareList[$middleware] ?? null;
+    }
+
+    public static function middleware($middleware, $name = null)
+    {
+        $handler = $middleware;
+        if (!$name && is_string($handler)) {
+            $name = $handler;
+        }
+        if (is_string($handler)) {
+            $obj = Dependency::getClassInstance($handler);
+            $handler = Dependency::getClassMethod($obj, "handle");
+        }
+        if ($handler) {
+            self::$middlewareList[$name] = $handler;
+        }
+    }
 }

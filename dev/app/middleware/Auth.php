@@ -2,6 +2,8 @@
 
 namespace App\Middleware;
 
+use App\Core\Request;
+
 class Auth
 {
     static public function check()
@@ -15,6 +17,14 @@ class Auth
         startSession();
         $_SESSION["id"] = $user["id"] ?? "";
         $_SESSION["logged"] = !!$user;
+    }
+
+    public function handle(Request $request, $next)
+    {
+        if (!self::check()) {
+            return redirect()->route("login");
+        }
+        return $next();
     }
 
     static public function logout()
