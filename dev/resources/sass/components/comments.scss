@@ -92,6 +92,15 @@
     }
   }
 
+  &__delete {
+    margin-left: auto;
+    transition: all .2s ease;
+
+    &:hover {
+      color: $error-color;
+    }
+  }
+
   .author {
     display: flex;
     align-items: center;

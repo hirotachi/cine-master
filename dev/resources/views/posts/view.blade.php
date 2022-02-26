@@ -9,8 +9,6 @@
                 <div class="intro__details">
                     <p class="intro__rating">{{$post->rating}}<span>/10</span></p>
                     <div class="intro__more">
-                        {{--                        <span>18+</span>--}}
-                        {{--                        <span>2h 12min</span>--}}
                         <span class="intro__author">Created by ( {{$usersMapByID[$post->author_id]->name}} )</span>
                         <div class="genres">
                             @foreach($post->genres as $genre)
@@ -24,8 +22,6 @@
                 <p class="details__title">{{$post->title}} <span>({{$post->year}})</span></p>
                 <div class="details__main">
                     <div class="details__more">
-                        {{--                        <span>18+</span>--}}
-                        {{--                        <span>2h 12min</span>--}}
                         <div class="genres">
                             @foreach($post->genres as $genre)
                                 <span>{{$genre}}</span>
@@ -63,6 +59,10 @@
                                         >
                                     </span>
                                     <span class="author__name">{{$author->name}}</span>
+                                    @if(\App\Middleware\Auth::isOwner($comment->author_id))
+                                        <a href="/posts/{{$post->id}}/comments/{{$comment->id}}/delete"
+                                           class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
+                                    @endif
                                 </div>
                                 <p class="comment__content">{{$comment->content}}</p>
                             </div>

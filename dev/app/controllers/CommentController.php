@@ -35,4 +35,18 @@ class CommentController
         $this->commentModel->create($data);
         return redirect($req->getReferer());
     }
+
+    public function delete(Request $req)
+    {
+        $commentId = $req->attributes->get("id");
+        $comment = $this->commentModel->findByID($commentId);
+        if (!$comment) {
+            return view("404");
+        }
+        if ($comment->author_id !== Auth::getUserID()) {
+            return view("403");
+        }
+        $this->commentModel->deleteByID($commentId);
+        return redirect($req->getReferer());
+    }
 }
