@@ -36,7 +36,7 @@
                     </div>
                     <p class="details__description">{{$post->description}}</p>
                 </div>
-                @if(\App\Middleware\Auth::check())
+                @if(\App\Middleware\Auth::isOwner($post->author_id))
                     <div class="post__control">
                         <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
                     </div>

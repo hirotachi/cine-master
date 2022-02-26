@@ -2,7 +2,6 @@
 
 namespace App\models;
 
-use DateTime;
 use PDO;
 use PDOException;
 
@@ -42,10 +41,10 @@ abstract class Model
     public function update($filter, $updates, $placeholderValues = []): bool
     {
         if ($this->withTimestamps) {
-            $updates["updatedAt"] = (new DateTime())->getTimestamp();
+            $updates["updatedAt"] = date('Y-m-d H:i:s');
         }
         $updateColumnsString = implode(",", $this->getUpdateColumnsString($updates));
-        $f = $this->connection->query("update $this->table set $updateColumnsString where $filter");
+        $f = $this->connection->prepare("update $this->table set $updateColumnsString where $filter");
         return $f->execute([...$updates, ...$placeholderValues]);
     }
 

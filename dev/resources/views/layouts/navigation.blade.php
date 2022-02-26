@@ -1,15 +1,15 @@
 <header class="navigation">
     <div class="navigation__main">
         <a href="/" class="navigation__logo">cinémaster</a>
-        <div class="navigation__menu_btn">
-            @for($i = 0; $i < 3; $i++)
-                <span></span>
-            @endfor
-        </div>
+        {{--        <div class="navigation__menu_btn">--}}
+        {{--            @for($i = 0; $i < 3; $i++)--}}
+        {{--                <span></span>--}}
+        {{--            @endfor--}}
+        {{--        </div>--}}
         <div class="navigation__other">
-            <span class="navigation__search">
-                <i class="fal fa-search"></i>
-            </span>
+            {{--            <span class="navigation__search">--}}
+            {{--                <i class="fal fa-search"></i>--}}
+            {{--            </span>--}}
 
             <a href="/{{\App\Middleware\Auth::check() ? "logout" : "login"}}"
                class="navigation__login">{{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>

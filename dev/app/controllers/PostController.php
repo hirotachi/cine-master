@@ -51,4 +51,31 @@ class PostController
         return view("posts.view", ["post" => $post]);
     }
 
+    public function edit(Request $req)
+    {
+        $postId = $req->attributes->get("id");
+        $post = $this->model->findByID($postId);
+        if (!$post) {
+            return response(view("404"), \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND);
+        }
+        if ($post->author_id !== Auth::getUserID()) {
+            return response(view("403"), \Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+        }
+        $post = (array) $post;
+
+        return view("posts.form",
+            [...$post, "operation" => "update", "_formAction" => "/posts/$postId", "_formMethod" => "put"]);
+    }
+
+    public function update(Request $req)
+    {
+        $postId = $req->attributes->get("id");
+        $data = $req->getBody();
+        $updated = $this->model->updateByID($postId, $data);
+        if (!$updated) {
+            return redirect($req->getReferer());
+        }
+        return redirect("/posts/$postId");
+    }
+
 }

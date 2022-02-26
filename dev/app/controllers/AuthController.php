@@ -55,8 +55,7 @@ class AuthController
 
     public function logout(Request $req): RedirectResponse
     {
-        $referer = $req->headers->get("referer");
         Auth::logout();
-        return redirect($referer);
+        return redirect($req->getReferer());
     }
 }

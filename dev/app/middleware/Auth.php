@@ -22,7 +22,12 @@ class Auth
     public static function getUserID()
     {
         self::check();
-        return $_SESSION["id"];
+        return $_SESSION["id"] ?? null;
+    }
+
+    public static function isOwner($id): bool
+    {
+        return self::getUserID() === $id;
     }
 
     public function handle(Request $request, $next)
