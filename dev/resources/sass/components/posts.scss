@@ -11,6 +11,16 @@
   @include desktop {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  &__placeholder {
+    text-transform: capitalize;
+    opacity: .8;
+    grid-column: 1 /-1;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 
@@ -20,6 +30,7 @@
   gap: 1rem;
 
   &__poster {
+    background-color: $placeholder-bg-color;
     height: 22rem;
     @include tablet {
       height: 33rem;

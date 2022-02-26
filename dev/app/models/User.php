@@ -5,7 +5,7 @@ namespace App\Models;
 class User extends Model
 {
     protected string $table = "users";
-    protected $required = [
+    protected array $required = [
         "email", "username", "password", "name",
     ];
 }

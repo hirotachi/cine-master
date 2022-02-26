@@ -164,6 +164,7 @@ $more-color: lighten($secondary-text-color, 10%);
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 1rem;
+  flex: 1;
 
   &__title {
     font-size: 3rem;

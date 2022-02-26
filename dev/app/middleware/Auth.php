@@ -19,6 +19,12 @@ class Auth
         $_SESSION["logged"] = !!$user;
     }
 
+    public static function getUserID()
+    {
+        self::check();
+        return $_SESSION["id"];
+    }
+
     public function handle(Request $request, $next)
     {
         if (!self::check()) {

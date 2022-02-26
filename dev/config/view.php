@@ -35,5 +35,4 @@ function view($path, $data = []): string
     return $blade->render($path, $data);
 }
 
-echo env("TESTER");
 

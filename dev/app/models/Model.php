@@ -9,8 +9,8 @@ use PDOException;
 abstract class Model
 {
     protected PDO $connection;
-    protected $required = [];
-    protected $defaults = [];
+    protected array $required = [];
+    protected array $defaults = [];
     protected bool $withTimestamps = true; // indicate whether table has createdAt and updatedAt fields to update them
     protected string $driver = "mysql";
     protected string $table;
@@ -27,11 +27,11 @@ abstract class Model
 
     public function create($data): bool|string
     {
-        $data = [...$this->defaults, ...$data];
+        $data = [...$this->getDefaults(), ...$data];
         $placeholders = implode(",", $this->getNamedPlaceholders($data));
         $columns = implode(",", array_keys($data));
         $statement = $this->connection->prepare("insert into $this->table ($columns) values ($placeholders)");
-        return $statement->execute($data) ? false : $this->connection->lastInsertId();
+        return !$statement->execute($data) ? false : $this->connection->lastInsertId();
     }
 
     public function updateByID($id, $updates): bool
@@ -72,9 +72,9 @@ abstract class Model
         return $st->fetch(PDO::FETCH_OBJ);
     }
 
-    public function fetchAll($filter, int $limit = null, int $offset = null, $placeholderValues = []): bool|array
+    public function fetchAll($filter = "", int $limit = null, int $offset = null, $placeholderValues = []): bool|array
     {
-        $query = "select * from $this->table where $filter";
+        $query = "select * from $this->table $filter";
         if ($limit) {
             $placeholderValues["limit"] = $limit;
             $query .= "limit :limit";

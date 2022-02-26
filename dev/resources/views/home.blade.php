@@ -3,6 +3,8 @@
     <div class="home">
         {{--        intro with featured posts --}}
         @include("components.posts")
-        <a class="home__more" href="/posts">view more</a>
+        @if(count($posts) > 0)
+            <a class="home__more" href="/posts">view more</a>
+        @endif
     </div>
 @endcomponent
