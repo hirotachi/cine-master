@@ -5,7 +5,11 @@
         <input name="{{$name ?? $label ?? ""}}" required="{{$required ?? false}}" class="{{$class ?? "input"}}"
                type="{{$type ?? "text"}}"
                placeholder="{{$placeholder ?? ""}}"
-               value="{{$value ?? ""}}">
+               value="{{$value ?? ""}}"
+        @foreach($other ?? [] as $attr => $val)
+            {{$attr}}="{{$val}}"
+        @endforeach
+        />
         @if(!empty($label))
     </label>
 @endif

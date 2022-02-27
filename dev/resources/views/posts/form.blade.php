@@ -5,7 +5,7 @@
         <form @if($_formAction ?? false)action="{{$_formAction}}" @endif method="post">
             @method({{strtoupper($_formMethod ?? "post")}})
             @include("components.input", ["label" => "title", "class" => "title", "placeholder" => "Your Post title goes here...","value" => $title ?? null] )
-            @include("components.input", ["label" => "rating", "required" => false, "type" => "number", "value" => $rating ?? 0])
+            @include("components.input", ["label" => "rating", "required" => false, "type" => "number", "value" => $rating ?? 0, "other" => ["step" => 0.1]])
             @include("components.input", ["label" => "poster", "placeholder" => "Poster link", "value" => $poster ?? null])
             @include("components.input", ["label" => "banner", "placeholder" => "Banner link", "value" => $banner ?? null])
             @include("components.input", ["label" => "year", "value" => date("Y"), "type" => "number", "value" => $year ?? null])
