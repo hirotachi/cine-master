@@ -23,5 +23,20 @@
       background-color: rgba($primary-text-color, .2);
     }
   }
+
+  &__posts {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    padding: .8rem 1rem;
+    background-color: $primary-text-color;
+    color: $primary-bg-color;
+    transition: all .2s ease;
+    width: fit-content;
+
+    &:hover {
+      background-color: $primary-bg-color;
+      color: $primary-text-color;
+    }
+  }
 }
 

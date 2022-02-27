@@ -113,4 +113,13 @@ class PostController
         return redirect()->route("home");
     }
 
+    public function ownerPosts(Request $request)
+    {
+        return view("home",
+            [
+                "posts" => $this->model->findAll("where author_id = :author", ["author" => Auth::getUserID()]),
+                "isMyPosts" => true
+            ]);
+    }
+
 }
