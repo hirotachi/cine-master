@@ -13,12 +13,12 @@
 
             <a href="/{{\App\Middleware\Auth::check() ? "logout" : "login"}}"
                class="navigation__login">{{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>
-            @if(\App\Middleware\Auth::check())
+            @auth
                 <a title="Create Post" href="/posts/create" class="navigation__create">
                     <span><i class="fal fa-plus-square"></i></span>
                     <span>create</span>
                 </a>
-            @endif
+            @endauth
         </div>
     </div>
     {{--    <div class="navigation__menu">--}}
@@ -31,7 +31,7 @@
     const nav = document.querySelector(".navigation");
 
 
-    menuBtn.addEventListener("click", e => {
+    menuBtn?.addEventListener("click", e => {
         const openClass = "navigation__menu_btn--open";
         const isOpen = menuBtn.classList.contains(openClass);
         menuBtn.classList.toggle(openClass);

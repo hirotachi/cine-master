@@ -31,23 +31,23 @@
                     </div>
                     <p class="details__description">{{$post->description}}</p>
                 </div>
-                @if(\App\Middleware\Auth::isOwner($post->author_id))
-                    <div class="post__control">
-                        <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
-                        <a href="/posts/{{$post->id}}/delete" class="delete">delete post</a>
-                    </div>
-                @endif
+                @owner($post->author_id)
+                <div class="post__control">
+                    <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
+                    <a href="/posts/{{$post->id}}/delete" class="delete">delete post</a>
+                </div>
+                @endowner
                 <div class="comments">
                     <h3 class="comments__title">
                         Comments @if(count($comments) > 0)({{count($comments)}})@endif
                     </h3>
-                    @if(\App\Middleware\Auth::check())
+                    @auth
                         <form class="form" action="/posts/{{$post->id}}/comments" method="post">
                         <textarea required oninput="handleInput(this)" placeholder="Your Comment"
                                   name="content"></textarea>
                             <button class="form__submit">publish</button>
                         </form>
-                    @endif
+                    @endauth
                     <div class="comments__list">
                         @forelse($comments as $comment)
                             <?php $author = $usersMapByID[$comment->author_id];?>
@@ -59,10 +59,10 @@
                                         >
                                     </span>
                                     <span class="author__name">{{$author->name}}</span>
-                                    @if(\App\Middleware\Auth::isOwner($comment->author_id))
-                                        <a href="/posts/{{$post->id}}/comments/{{$comment->id}}/delete"
-                                           class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
-                                    @endif
+                                    @owner($comment->author_id)
+                                    <a href="/posts/{{$post->id}}/comments/{{$comment->id}}/delete"
+                                       class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
+                                    @endowner
                                 </div>
                                 <p class="comment__content">{{$comment->content}}</p>
                             </div>
