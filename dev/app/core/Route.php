@@ -59,8 +59,9 @@ class Route
         self::$request = &$request;
         $handler = self::getHandler($request);
         if (!$handler) {
-            return new Response(json_encode(["message" => "not found"]), Response::HTTP_NOT_FOUND,
-                ["content-type" => "application/json"]);
+//            return new Response(json_encode(["message" => "not found"]), Response::HTTP_NOT_FOUND,
+//                ["content-type" => "application/json"]);
+            return new Response(view("404"), Response::HTTP_NOT_FOUND);
         }
         return self::resolve($handler);
 

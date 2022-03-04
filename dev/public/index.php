@@ -9,8 +9,6 @@ use App\Kernel;
 require __DIR__.'/../vendor/autoload.php';
 
 
-//require_once __DIR__.'/../config/utils.php';
-
 // gather routes
 require_once __DIR__."/../routes/web.php";
 
@@ -26,7 +24,6 @@ $kernel = new Kernel();
 
 $response = $kernel->handle(Request::capture());
 $response?->send();
-
 
 
 
