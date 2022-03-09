@@ -38,7 +38,10 @@ class Route
         list($uri, $method) = $arguments;
 
 
-        $handler = new Handler($method, (self::$currentGroup ?? "").$uri);
+        $url = (self::$currentGroup ?? "").$uri;
+        $url = self::formatURL($url);
+        
+        $handler = new Handler($method, $url);
 
         self::$routesMap[strtolower($methodName)][$handler->regexURI] = &$handler;
         if (!$handler->isDynamic) {
@@ -80,12 +83,19 @@ class Route
         return new Response($response);
     }
 
+    private static function formatURL($url): string
+    {
+        $str = rtrim($url, "/");
+        return $str === "" ? "/" : $str;
+    }
+
     static private function getHandler(Request $request): Handler|null
     {
         $methodRoutesMap = self::$routesMap[strtolower($request->getMethod())] ?? null;
         $handler = null;
         if ($methodRoutesMap) {
             $path = $request->getPathInfo();
+            $path = self::formatURL($path);
             $handler = $methodRoutesMap[$path] ?? null;
             if ($handler) {
                 return $handler;

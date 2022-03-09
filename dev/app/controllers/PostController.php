@@ -121,5 +121,4 @@ class PostController
                 "isMyPosts" => true
             ]);
     }
-
 }
