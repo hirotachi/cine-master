@@ -15,14 +15,20 @@ class Auth
     static public function login($user)
     {
         startSession();
-        $_SESSION["id"] = $user["id"] ?? "";
+        $_SESSION["user"] = $user;
         $_SESSION["logged"] = !!$user;
     }
 
     public static function getUserID()
     {
         self::check();
-        return $_SESSION["id"] ?? null;
+        return $_SESSION["user"]?->id;
+    }
+
+    public static function getUser()
+    {
+        self::check();
+        return $_SESSION["user"] ?? null;
     }
 
     public static function isOwner($id): bool

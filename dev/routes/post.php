@@ -17,7 +17,7 @@ Route::group("/posts", function ($path) {
 
     Route::group("/{post}/comments", function ($path) {
         Route::post("/", [CommentController::class, "create"])->middleware("auth");
-        Route::get("/{id}/delete", [CommentController::class, "delete"]);
+        Route::get("/{id}/delete", [CommentController::class, "delete"])->middleware("auth");
     });
 });
 

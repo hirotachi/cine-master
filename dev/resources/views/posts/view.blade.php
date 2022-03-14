@@ -60,8 +60,8 @@
                                     </span>
                                     <span class="author__name">{{$author->name}}</span>
                                     @owner($comment->author_id)
-                                    <a href="/posts/{{$post->id}}/comments/{{$comment->id}}/delete"
-                                       class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
+                                    <span onclick="handleDelete(this)" data-id="{{$comment->id}}"
+                                          class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></span>
                                     @endowner
                                 </div>
                                 <p class="comment__content">{{$comment->content}}</p>
@@ -76,6 +76,56 @@
 
     </div>
     <script>
+        const commentForm = document.querySelector(".form");
+        const commentInput = commentForm.querySelector("textarea");
+        const commentsList = document.querySelector(".comments__list");
+        const commentsTitle = document.querySelector(".comments__title");
+
+        commentForm.addEventListener("submit", e => {
+            e.preventDefault();
+            const content = commentInput.value;
+            fetch("/posts/{{$post->id}}/comments", {
+                method: "POST",
+                body: new FormData(commentForm)
+            }).then(res => res.json()).then(data => {
+                const {commentId} = data;
+                const comment = `
+            <div class="comment" >
+                                <div class="author">
+                                    <span class="author__avatar">
+                                        <img src="{{$avatar}}"
+                                             alt="{{$user->name}}"
+                                        >
+                                    </span>
+                                    <span  class="author__name">{{$user->name}}</span>
+                <span onclick="handleDelete(this)" data-id="${commentId}"
+                                       class="comment__delete" title="remove"><i class="far fa-trash-alt"></i></a>
+                </div>
+                <p class="comment__content">${content}</p>
+                            </div>`
+                const commentsPlaceholder = document.querySelector(".comments__placeholder");
+                if (commentsPlaceholder) {
+                    commentsPlaceholder.remove();
+                }
+                commentsList.innerHTML = comment + commentsList.innerHTML;
+
+                commentsTitle.textContent = `Comments${commentsList.childElementCount ? ` (${commentsList.childElementCount})` : ""}`
+                commentInput.value = "";
+            });
+        })
+
+        function handleDelete(btn) {
+            const commentId = btn.getAttribute("data-id");
+            fetch(`/posts/{{$post->id}}/comments/${commentId}/delete`).then(res => res.json()).then(() => {
+                const comment = btn.parentElement.parentElement;
+                comment.remove();
+                commentsTitle.textContent = `Comments${commentsList.childElementCount ? ` (${commentsList.childElementCount})` : ""}`
+                if (!commentsList.childElementCount) {
+                    commentsList.innerHTML = `<p class="comments__placeholder">no comments</p>`;
+                }
+            })
+        }
+
         function handleInput(target) {
             if (!target.value) {
                 target.removeAttribute("style");

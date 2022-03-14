@@ -35,7 +35,7 @@ class AuthController
             return view("auth",
                 ["page" => "login", "errorFields" => $requiredKeys, "message" => "Username or password is wrong"]);
         }
-        Auth::login((array) $user);
+        Auth::login($user);
         return redirect()->route("home");
     }
 

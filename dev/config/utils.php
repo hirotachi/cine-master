@@ -11,8 +11,11 @@ function redirect(string $path = "")
     return $path === "" ? $redirectResponse : $redirectResponse->getResponse();
 }
 
-function response(?string $content = "", int $status = Response::HTTP_OK, array $headers = []): Response
+function response(string|array $content = "", int $status = Response::HTTP_OK, array $headers = []): Response
 {
+    if (is_array($content)) {
+        $content = json_encode($content);
+    }
     return new Response($content, $status, $headers);
 }
 

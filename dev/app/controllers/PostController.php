@@ -66,7 +66,10 @@ class PostController
         }
         $avatar = "https://images.unsplash.com/photo-1504553101389-41a8f048c3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=823&q=80";
         return view("posts.view",
-            ["post" => $post, "comments" => $comments, "usersMapByID" => $usersMapByID, "avatar" => $avatar]);
+            [
+                "post" => $post, "comments" => $comments, "usersMapByID" => $usersMapByID, "avatar" => $avatar,
+                "user" => Auth::getUser()
+            ]);
     }
 
     public function edit(Request $req)
