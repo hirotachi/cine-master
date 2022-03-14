@@ -121,4 +121,9 @@ class PostController
                 "isMyPosts" => true
             ]);
     }
+
+    public function allPosts()
+    {
+        return $this->model->findAll();
+    }
 }

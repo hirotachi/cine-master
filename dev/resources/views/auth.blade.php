@@ -15,7 +15,7 @@
             @endif
             @include("components.input", ["placeholder" => $page === "login" ?  "Username or email" : "Username", "label" => "username", "errorClass" => "form__field--error"] )
             @include("components.input", ["placeholder" => "********","type"=>"password", "label" => "password", "errorClass" => "form__field--error"] )
-            <button class="form__submit">{{$page === "login" ? "Sign In" : "Create Account"}}</button>
+            <button class="btn btn-light form__submit">{{$page === "login" ? "Sign In" : "Create Account"}}</button>
         </form>
         <p class="auth__register">
             {{$page === "login" ? "Don't have an account" : "Already have an account"}}? <a

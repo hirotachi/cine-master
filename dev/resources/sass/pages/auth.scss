@@ -58,14 +58,14 @@
 
     &__submit {
       padding: 1rem;
-      background-color: $primary-text-color;
-      color: $primary-bg-color;
       border: none;
       transition: all .2s ease;
       font-weight: 500;
       align-self: center;
       cursor: pointer;
       width: 100%;
+      font-size: 1.4rem;
+      border-radius: 0;
       @include tablet {
         margin-top: 1rem;
         width: 80%;
