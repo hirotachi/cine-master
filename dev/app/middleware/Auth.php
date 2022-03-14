@@ -22,7 +22,7 @@ class Auth
     public static function getUserID()
     {
         self::check();
-        return $_SESSION["user"]?->id;
+        return $_SESSION["user"]?->id ?? null;
     }
 
     public static function getUser()
