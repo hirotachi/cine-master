@@ -1,29 +1,17 @@
 <header class="navigation">
     <div class="navigation__main">
         <a href="/" class="navigation__logo">cinémaster</a>
-        {{--        <div class="navigation__menu_btn">--}}
-        {{--            @for($i = 0; $i < 3; $i++)--}}
-        {{--                <span></span>--}}
-        {{--            @endfor--}}
-        {{--        </div>--}}
         <div class="navigation__other">
-            {{--            <span class="navigation__search">--}}
-            {{--                <i class="fal fa-search"></i>--}}
-            {{--            </span>--}}
-
             <a href="/{{\App\Middleware\Auth::check() ? "logout" : "login"}}"
                class="navigation__login">{{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>
             @auth
-                <a title="Create Post" href="/posts/create" class="navigation__create">
+                <a title="Create Post" href="/posts/create" class="btn btn-light navigation__create">
                     <span><i class="fal fa-plus-square"></i></span>
                     <span>create</span>
                 </a>
             @endauth
         </div>
     </div>
-    {{--    <div class="navigation__menu">--}}
-    {{--        <div>categories</div>--}}
-    {{--    </div>--}}
 </header>
 
 <script>

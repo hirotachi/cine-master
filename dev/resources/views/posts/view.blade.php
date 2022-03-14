@@ -33,8 +33,8 @@
                 </div>
                 @owner($post->author_id)
                 <div class="post__control">
-                    <a href="/posts/{{$post->id}}/edit" class="edit">edit post</a>
-                    <a href="/posts/{{$post->id}}/delete" class="delete">delete post</a>
+                    <a href="/posts/{{$post->id}}/edit" class=" btn btn-light edit">edit post</a>
+                    <a href="/posts/{{$post->id}}/delete" class="btn btn-danger delete">delete post</a>
                 </div>
                 @endowner
                 <div class="comments">

@@ -84,15 +84,21 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    font-size: 1.4rem;
+    border-radius: 0;
     transition: all .2s ease;
+    background-color: transparent;
+    color: $primary-text-color;
+    border: none;
     @include tablet {
       background-color: $primary-text-color;
       color: $primary-bg-color;
       padding: .5rem 2rem;
-      &:hover {
-        color: $primary-text-color;
-        background-color: transparent;
-      }
+    }
+
+    &:hover {
+      color: $primary-text-color;
+      background-color: transparent;
     }
 
     span {
