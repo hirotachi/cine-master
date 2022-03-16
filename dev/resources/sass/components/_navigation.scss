@@ -45,6 +45,16 @@
 
     a {
       text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .name {
+        display: none;
+        @include tablet {
+          display: inline-block;
+        }
+      }
     }
   }
 

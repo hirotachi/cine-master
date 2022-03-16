@@ -3,7 +3,11 @@
         <a href="/" class="navigation__logo">cinémaster</a>
         <div class="navigation__other">
             <a href="/{{\App\Middleware\Auth::check() ? "logout" : "login"}}"
-               class="navigation__login">{{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>
+               class="navigation__login">
+                @if(\App\Middleware\Auth::check())
+                    <span class="name">({{\App\Middleware\Auth::getUser()->name}})</span>
+                @endif
+                {{\App\Middleware\Auth::check() ? "logout" : "sign in"}}</a>
             @auth
                 <a title="Create Post" href="/posts/create" class="btn btn-light navigation__create">
                     <span><i class="fal fa-plus-square"></i></span>
