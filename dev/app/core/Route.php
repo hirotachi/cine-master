@@ -40,11 +40,11 @@ class Route
 
         $url = (self::$currentGroup ?? "").$uri;
         $url = self::formatURL($url);
-        
+
         $handler = new Handler($method, $url);
 
         self::$routesMap[strtolower($methodName)][$handler->regexURI] = &$handler;
-        if (!$handler->isDynamic) {
+        if (!$handler->isDynamic) { // example of dynamic route /posts/{id}
             self::$routesMap[strtolower($methodName)][$handler->uri] = &$handler;
         }
 
@@ -147,7 +147,7 @@ class Route
         if (!$name && is_string($handler)) {
             $name = $handler;
         }
-        if (is_string($handler)) {
+        if (is_string($handler)) { // in case a class name is provided to go for its handle method
             $obj = Dependency::getClassInstance($handler);
             $handler = Dependency::getClassMethod($obj, "handle");
         }

@@ -67,7 +67,7 @@ class Handler
             return $canRunResolver;
         }
         if ($canRunResolver !== true) {
-            return response(json_encode(["message" => 'forbidden']), Response::HTTP_FORBIDDEN);
+            return response(["message" => 'forbidden'], Response::HTTP_FORBIDDEN);
         }
         if (is_array($this->resolver)) {
             list($obj, $method) = $this->resolver;
