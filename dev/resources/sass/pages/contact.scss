@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+
+.contact {
+  @include normalizePadding;
+  @include desktop {
+    width: 70%;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  input, textarea {
+    font-size: 1.6rem;
+    padding: 1.2rem 1rem;
+    border: 1px solid $placeholder-bg-color;
+    background-color: $input-bg;
+    color: inherit;
+    border-radius: 0;
+  }
+
+  label {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 1rem;
+    border: none;
+    transition: all .2s ease;
+    font-weight: 500;
+    align-self: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.4rem;
+    border-radius: 0;
+    @include tablet {
+      margin-top: 1rem;
+      width: 80%;
+    }
+
+    &:hover {
+      color: $primary-text-color;
+      background-color: transparent;
+    }
+  }
+}

@@ -23,7 +23,6 @@
 <body>
 @include("layouts.navigation")
 {{$slot}}
-{{--<div>footer</div>--}}
 @stack("scripts")
 </body>
 </html>

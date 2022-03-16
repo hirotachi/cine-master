@@ -10,6 +10,7 @@
                     <span>create</span>
                 </a>
             @endauth
+            <a href="/contact" type="button" class="btn navigation__create btn-light">Contact</a>
         </div>
     </div>
 </header>
