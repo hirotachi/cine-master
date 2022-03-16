@@ -49,7 +49,8 @@ class AuthController
         }
         $data["password"] = password_hash($data["password"], PASSWORD_ARGON2I);
         $id = $this->userModel->create($data);
-        Auth::login(["îd" => $id]);
+        $user = $this->userModel->findByID($id);
+        Auth::login($user);
         return redirect()->route("home");
     }
 
