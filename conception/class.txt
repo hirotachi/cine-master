@@ -19,8 +19,7 @@ class User{
     +String username
     +String email
     -String password
-    +String firstName
-    +String lastName
+    +String name
     +login()
     +register()
     +createComment(postID, content)
