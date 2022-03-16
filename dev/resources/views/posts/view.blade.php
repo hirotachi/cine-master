@@ -111,6 +111,7 @@
 
                 commentsTitle.textContent = `Comments${commentsList.childElementCount ? ` (${commentsList.childElementCount})` : ""}`
                 commentInput.value = "";
+                handleInput(commentInput);
             });
         })
 
