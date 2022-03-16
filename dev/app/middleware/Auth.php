@@ -4,7 +4,7 @@ namespace App\Middleware;
 
 use App\Core\Request;
 
-class Auth
+class Auth implements Middleware
 {
     static public function check()
     {
